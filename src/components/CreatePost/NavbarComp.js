@@ -1,6 +1,7 @@
-import React from React;
+import React from "react";
+import logo from "../Assets/Imagenes/logo.png"
 
-export const Post = () =>{
+export const NavbarPost = () =>{
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex container-fluid">
@@ -21,8 +22,10 @@ export const Post = () =>{
             <div id="cerrar" className="d-flex justify-content-end">
               <button id="cerrar" className="btn-close fw-bolder" type="submit"></button>
             </div>
+            {/*
             <button id="cerrar" className="btn fw-bolder" type="submit">X</button>
-          </div>
+        */}
+            </div>
       </div>
     </nav>
             </div>

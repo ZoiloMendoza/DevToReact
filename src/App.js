@@ -2,6 +2,7 @@ import './App.css';
 import AsideRight from './components/Aside-right/Aside-right';
 import Footer from './components/Footer/Footer';
 //import Navbar from './components/Navbar/Navbar';
+import Asideleft from './components/Asideleft/Asideleft'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <header className="App-header">
         
       </header>
+      <Asideleft/>
       <main>
         <section>
         </section>

@@ -4,7 +4,6 @@ import logo from '../Assets/Imagenes/logo.png';
 
 const Navbar = () => {
     return (
-        
             <nav className='navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center align-items-center p-2 w-100'>
                 
                     <img className='w-10' src={logo} alt='logo'/>

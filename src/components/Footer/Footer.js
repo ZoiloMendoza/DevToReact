@@ -1,11 +1,11 @@
 import React from "react";
-import './_footer.scss';
+//import './_footer.scss';
 import logo from '../Assets/iconos/leaf.svg';
 
 const Footer = () => {
     return (
-        <footer class="container-fluid d-flex flex-column justify-content-center align-items-center px-5 py-4">
-      <p class="text__azul">
+        <footer className="container-fluid d-flex flex-column justify-content-center align-items-center px-5 py-4">
+      <p className="text__azul">
         <span>DEV Community </span> 👩‍💻👨‍💻 — A constructive and inclusive social
         network for software developers. With you every step of your journey.
       </p>
@@ -19,8 +19,8 @@ const Footer = () => {
         Made with love and <span> Ruby on Rails. </span> DEV Community 👩‍💻👨‍💻 ©
         2016 - 2022.
       </p>
-      <div class="">
-        <a class="logoContainer" href="/" role="button">
+      <div className="">
+        <a className="logoContainer" href="/" role="button">
           <img src={logo} alt="logo"/>
         </a>
       </div>

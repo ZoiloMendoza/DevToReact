@@ -1,16 +1,16 @@
 import './App.css';
-import AsideRight from './components/Aside-right/Aside-right';
+//import AsideRight from './components/Aside-right/Aside-right';
 import Footer from './components/Footer/Footer';
-//import Navbar from './components/Navbar/Navbar';
-import Asideleft from './components/Asideleft/Asideleft'
+import Navbar from './components/Navbar/Navbar';
+//import Asideleft from './components/Asideleft/Asideleft'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+        <Navbar />
       </header>
-      <Asideleft/>
+     
       <main>
         <section>
         </section>

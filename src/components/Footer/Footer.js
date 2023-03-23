@@ -1,5 +1,6 @@
 import React from "react";
 import './_footer.scss';
+import logo from '../Assets/iconos/leaf.svg';
 
 const Footer = () => {
     return (
@@ -20,7 +21,7 @@ const Footer = () => {
       </p>
       <div class="">
         <a class="logoContainer" href="/" role="button">
-          <img src="../Assets/iconos/leaf.svg" alt="logo"/>
+          <img src={logo} alt="logo"/>
         </a>
       </div>
     </footer>

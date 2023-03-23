@@ -1,10 +1,10 @@
 import React from "react";
 
-const AsideRight = () => {
+export const AsideRight = () => {
     return (
         <section className="page__rightColumn">
           <article className="mongoHackathon">
-            <img src="../Assets/Imagenes/mongoHackathon.webp" alt="mongo hackathon">
+            <img src="../Assets/Imagenes/mongoHackathon.webp" alt="mongo hackathon"/>
             <div class="mongoHackathon__body">
               <h3 class="px-3 py-4">MongoDB Atlas Hackathon 2022 (9)</h3>
               <ul class="p-0">
@@ -20,7 +20,7 @@ const AsideRight = () => {
               </div>
             </div>
           </article>
-         //<!-- asides alison -->
+         {/*//<!-- asides alison -->*/}
           <article class="listings">
           <ul class="list-group">
             <li class="list-group-item title d-flex justify-content-between">Listings <a href="/listings">See all </a> </li>            

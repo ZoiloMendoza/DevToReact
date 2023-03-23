@@ -11,7 +11,7 @@ export const Post = () =>{
                       <img id="logo_Dev"  src="../Assets/Imagenes/logo.png" alt="logo" />
                   </a>
                   <div className="d-flex">
-                      <span id="spanDev" className="fw-bolder text-center pt-2 ps-2">Cread Post</span>
+                      <span id="spanDev" className="fw-bolder text-center pt-2 ps-2">Create Post</span>
                   </div>
               </div>
             <div className="d-flex">

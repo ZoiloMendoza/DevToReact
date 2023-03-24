@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './styles.css';
 import logo from '../Assets/Imagenes/logo.png';
 import { useMediaQuery } from 'react-responsive';
-import Footer from '../Footer/Footer';
+import Desp from './Desp';
+
 
 
 const Navbar = () => {
     
-        const [ menuOpen, setMenuOpen ] = useState(false)
+      const [ menuOpen, setMenuOpen ] = useState(false)
 
       const isBigScreen = useMediaQuery({ query: '(min-width: 1000px)' })
       const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
@@ -31,8 +32,7 @@ const Navbar = () => {
                     }
                     {menuOpen &&
                     <div className='navigation' style={{display:'inline', backgroundColor:'white', height:'100vh', width:'50vw', marginTop:'50px', position:'absolute'}}>
-                        <h1>Hello</h1>
-                        <p>Lorem</p>
+                        <Desp />
                     </div>
                     }
 

@@ -1,7 +1,8 @@
 import React from "react";
 import AsideRight from '../../Aside-right/Aside-right'
-//import AsideLeftZ from "../../Asideleft/AsideLeftZ"
-import AsideLeft from "../../AsideLeft/AsideLeft";
+import AsideLeftZ from "../../AsideLeft/AsideLeftZ"
+//import AsideLeft from "../../AsideLeft/AsideLeft";
+
 
 
 const Main = () =>{
@@ -10,12 +11,12 @@ const Main = () =>{
         <main>
             <selection className='page-container container-xl d-flex justify-content-between'>
                 <selection className='page__leftColumn'>{/**Columna 1 */}
-                    <AsideLeft/>
+                    <AsideLeftZ/>
                 </selection>
                 <selection className='page__centerColumn'>{/**Columna 2 */}
 
                 </selection>
-                <section class="page__rightColumn">{/**Columna 3 */}
+                <section className="page__rightColumn">{/**Columna 3 */}
                     <AsideRight/>
                 </section>
             </selection>

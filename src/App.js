@@ -1,4 +1,4 @@
-import './App.css';
+import './styles.css';
 import Home from './components/Home';
 //import AsideRight from './components/Aside-right/Aside-right';
 //import Footer from './components/Footer/Footer';

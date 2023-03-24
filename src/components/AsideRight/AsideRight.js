@@ -1,11 +1,12 @@
 import React from "react";
 import brand from "../Assets/Imagenes/mongoHackathon.webp";
-import './_aside.scss';
-import './_listings.scss';
+//import './_aside.scss';
+//import './_listings.scss';
+//import './_mongoArticle.scss';
 
 const AsideRight = () => {
     return (
-        <section className="page__rightColumn">
+          <>
           <article className="mongoHackathon">
             <img src={brand} alt="mongo hackathon"/>
             <div className="mongoHackathon__body">
@@ -68,7 +69,7 @@ const AsideRight = () => {
     
               </ul>
               </article>
-        </section>
+              </>
     )
 }
 

@@ -1,8 +1,9 @@
+import AsideLeft from "../../AsideLeft/AsideLeft";
 const Main = () =>{
 
     return (
         <>
-    
+        <AsideLeft/>
         </>
     )
 }

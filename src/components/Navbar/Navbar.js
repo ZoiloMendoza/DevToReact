@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './styles.css';
 import logo from '../Assets/Imagenes/logo.png';
 import { useMediaQuery } from 'react-responsive';
+import Footer from '../Footer/Footer';
 
 
 const Navbar = () => {
@@ -16,6 +17,7 @@ const Navbar = () => {
         console.log('Boton clickeado')
       }
 
+      
     
     return (
             <nav className='navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center align-items-center p-2 w-100'>
@@ -27,7 +29,11 @@ const Navbar = () => {
                         <span className='navbar-toggler-icon'></span>
                     </button>
                     }
-                    
+                    {menuOpen &&
+                    <div className='navigation' style={{backgroundColor:'blue'}}>
+                        <Footer />
+                    </div>
+                    }
 
                 <div className='container d-flex flex-row justify-content-around collapse navbar-collapse'>
                 {isBigScreen &&

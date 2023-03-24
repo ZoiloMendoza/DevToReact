@@ -4,6 +4,8 @@ import logo from '../Assets/Imagenes/logo.png';
 import { useMediaQuery } from 'react-responsive';
 
 const Navbar = () => {
+
+            
       const isBigScreen = useMediaQuery({ query: '(min-width: 1000px)' })
       const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 

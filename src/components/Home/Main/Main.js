@@ -1,4 +1,4 @@
-import AsideRight from "../../Aside-right/Aside-right";
+import AsideRight from "../../AsideRight/AsideRight";
 
 const Main = () =>{
 

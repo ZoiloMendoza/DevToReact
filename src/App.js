@@ -2,7 +2,7 @@ import './App.css';
 //import AsideRight from './components/Aside-right/Aside-right';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
-//import Asideleft from './components/Asideleft/Asideleft'
+import AsideLeft from './components/AsideLeft/AsideLeft'
 import { NavbarPost } from './components/CreatePost/NavbarPost/NavbarPost';
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
       </header>
      
       <main>
+        <Asideleft />
         <section>
         </section>
       </main>

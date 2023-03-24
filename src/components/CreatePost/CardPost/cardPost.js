@@ -30,7 +30,7 @@ export const Post = () => {
 
               <div className="bg-light">
                 <ul className="list-group list-group-horizontal px-3 bg-light py-2">
-                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="../Ass"></object></li>
+                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/be.svg"></object></li>
                   <li className="list-group-item border-0 bg-light"><object className="me-2" data="./Assets/iconos/icon2.svg"></object></li>
                   <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="./Assets/iconos/icon3.svg"></object></li>
                   <li className="list-group-item border-0 bg-light"><object className="me-2" data="./Assets/iconos/icon4.svg"></object></li>

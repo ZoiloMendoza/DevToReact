@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer';
 
 const Navbar = () => {
     
-        const [ menuOpen, setMenuOpen ] = useState(false)
+      const [ menuOpen, setMenuOpen ] = useState(false)
 
       const isBigScreen = useMediaQuery({ query: '(min-width: 1000px)' })
       const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })

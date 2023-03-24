@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 import logo from '../Assets/Imagenes/logo.png';
+import lupita from '../Assets/iconos/lupita.svg';
 import { useMediaQuery } from 'react-responsive';
 import AsideLeft from '../AsideLeft/AsideLeft';
 //import Desp from './Desp';
@@ -11,7 +12,7 @@ const Navbar = () => {
       const [ menuOpen, setMenuOpen ] = useState(false)
 
       const isBigScreen = useMediaQuery({ query: '(min-width: 1000px)' })
-      const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+      const isTabletOrMobile = useMediaQuery({ query: '(max-width: 780px)' })
 
       const openMenu = () => {
         setMenuOpen(!menuOpen)
@@ -46,7 +47,7 @@ const Navbar = () => {
                 {isBigScreen &&
                 <form class="form-inline d-flex">
                     <input className='form-control mr-sm-2' type="search" placeholder="Search" aria-label="Search" />
-                    <button className='btn btn-outline-secondary my-2 my-sm-0' type="submit">Search</button>
+                    <button className='btn btn-outline-secondary my-2 my-sm-0' type="submit"><img src={lupita} alt='lupita' style={{maxWidth: '20px'}}/></button>
                 </form>
                 }
                 

@@ -1,6 +1,5 @@
 
 import profilePicture from '../Assets/Imagenes/profile-picture.png';
-import './Navbar/style.css';
 
 const NavbarNew = () => {
     const url = 'https://google.com';

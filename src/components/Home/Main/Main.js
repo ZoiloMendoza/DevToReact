@@ -1,4 +1,4 @@
-import AsideRight from "../../Aside-right/Aside-right";
+import AsideRight from "../../AsideRight/AsideRight";
 
 const Main = () =>{
 
@@ -6,7 +6,6 @@ const Main = () =>{
         <main>
             <selection className='page-container container-xl d-flex justify-content-between'>
                 <selection className='page__leftColumn'>{/**Columna 1 */}
-                <AsideLeft/>
                 </selection>
                 <selection className='page__centerColumn'>{/**Columna 2 */}
 

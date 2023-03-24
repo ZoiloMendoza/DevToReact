@@ -31,9 +31,9 @@ const Post = () => {
 
               <div className="bg-light">
                 <ul className="list-group list-group-horizontal px-3 bg-light py-2">
-                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/be.svg">bold</object></li>
-                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon2.svg">icono</object></li>
-                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon3.svg">ICON3</object></li>
+                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/be.svg">be</object></li>
+                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon2.svg">icon2</object></li>
+                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon3.svg">icon3</object></li>
                   <li className="list-group-item border-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon4.svg">icon4</object></li>
                   <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon5.svg">icon5</object></li>
                   <li className="list-group-item border-0 bg-light w-75"><object className="me-2" data="/src/components/Assets/iconos/icon6.svg">icon6</object></li>

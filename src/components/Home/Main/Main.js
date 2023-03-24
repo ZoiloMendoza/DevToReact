@@ -1,15 +1,10 @@
-export const Main = () =>{
+const Main = () =>{
 
     return (
         <>
-        <header>
-        </header>
-
-        <main>
-        </main>
-
-        <footer>
-        </footer>
+    
         </>
     )
 }
+
+export default Main;

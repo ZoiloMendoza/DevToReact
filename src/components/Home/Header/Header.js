@@ -1,15 +1,12 @@
-export const Header = () =>{
+import Navbar from "../../Navbar/Navbar";
+
+const Header = () =>{
 
     return (
         <>
-        <header>
-        </header>
-
-        <main>
-        </main>
-
-        <footer>
-        </footer>
+          <Navbar/>       
         </>
     )
 }
+
+export default Header;

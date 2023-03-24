@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import logo from '../Assets/Imagenes/logo.png';
 import { useMediaQuery } from 'react-responsive';
 
-const Navbar = () => {
 
-            
+const Navbar = () => {
+    
+        const [ menuOpen, setMenuOpen ] = useState(false)
+
       const isBigScreen = useMediaQuery({ query: '(min-width: 1000px)' })
       const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
+      const openMenu = () => {
+        setMenuOpen(!menuOpen)
+        console.log('Boton clickeado')
+      }
 
     
     return (
@@ -16,10 +23,12 @@ const Navbar = () => {
                     <img className='w-10' src={logo} alt='logo'/>
                     
                     {isTabletOrMobile && 
-                    <button className='navbar-toggler' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className='navbar-toggler' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={openMenu}>
                         <span className='navbar-toggler-icon'></span>
                     </button>
                     }
+                    
+
                 <div className='container d-flex flex-row justify-content-around collapse navbar-collapse'>
                 {isBigScreen &&
                 <form class="form-inline d-flex">

@@ -30,8 +30,9 @@ const Navbar = () => {
                     </button>
                     }
                     {menuOpen &&
-                    <div className='navigation' style={{backgroundColor:'blue'}}>
-                        <Footer />
+                    <div className='navigation' style={{display:'inline', backgroundColor:'white', height:'100vh', width:'50vw', marginTop:'50px', position:'absolute'}}>
+                        <h1>Hello</h1>
+                        <p>Lorem</p>
                     </div>
                     }
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const AsideRight = () => {
+const AsideRight = () => {
     return (
         <section className="page__rightColumn">
           <article className="mongoHackathon">
@@ -68,3 +68,5 @@ export const AsideRight = () => {
         </section>
     )
 }
+
+export default AsideRight;

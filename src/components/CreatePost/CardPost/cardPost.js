@@ -1,7 +1,7 @@
 import React from "react";
 import "./_cardPost.scss"
 
-export const Post = () => {
+const Post = () => {
     return(
         <main className="main__cards mt-0 d-flex w-100 vh-100"> 
         
@@ -31,13 +31,13 @@ export const Post = () => {
 
               <div className="bg-light">
                 <ul className="list-group list-group-horizontal px-3 bg-light py-2">
-                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/be.svg"></object></li>
-                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon2.svg"></object></li>
-                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon3.svg"></object></li>
-                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon4.svg"></object></li>
-                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon5.svg"></object></li>
-                  <li className="list-group-item border-0 bg-light w-75"><object className="me-2" data="/src/components/Assets/iconos/icon6.svg"></object></li>
-                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon7.svg"></object></li>
+                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/be.svg">bold</object></li>
+                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon2.svg">icono</object></li>
+                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon3.svg">ICON3</object></li>
+                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon4.svg">icon4</object></li>
+                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon5.svg">icon5</object></li>
+                  <li className="list-group-item border-0 bg-light w-75"><object className="me-2" data="/src/components/Assets/iconos/icon6.svg">icon6</object></li>
+                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon7.svg">icon7</object></li>
                 </ul>
               </div>
 
@@ -47,7 +47,7 @@ export const Post = () => {
                   <ul className="list-group list-group-horizontal px-3 bg-light py-2">
                     <button type="button" className="btn btn-primary fw-bold">Publish</button>
                     <li className="list-group-item border-0 bg-light">Save draft</li>
-                    <li className="list-group-item border-0 px-0 bg-light ps-2"><object className="me-2" data="/src/components/Assets/iconos/icon8.svg"></object></li>
+                    <li className="list-group-item border-0 px-0 bg-light ps-2"><object className="me-2" data="/src/components/Assets/iconos/icon8.svg">icon8</object></li>
                     <li className="list-group-item border-0 bg-light">Revert new changes</li>
                   </ul>
                 </div>
@@ -65,3 +65,4 @@ export const Post = () => {
     )
 
 }
+export default Post;

@@ -2,7 +2,7 @@ import React from "react";
 //import logo from "../Assets/Imagenes/logo.png"
 import "./_cardPost.scss"
 
-export const NavbarPost = () =>{
+const NavbarPost = () =>{
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex container-fluid">
@@ -30,4 +30,4 @@ export const NavbarPost = () =>{
             </div>
         )
     }
- 
+ export default NavbarPost

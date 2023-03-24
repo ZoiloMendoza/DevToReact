@@ -1,9 +1,9 @@
-import { Main } from "./Main/Main";
-import { Header } from "./Header/Header";
-import { Footer } from '../Footer/Footer';
+import Main from "./Main/Main";
+import Header from "./Header/Header";
+import Footer from '../Footer/Footer';
 
 
-export const Home = () =>{
+const Home = () =>{
 
     return (
         <>
@@ -13,3 +13,5 @@ export const Home = () =>{
         </>
     )
 }
+
+export default Home;

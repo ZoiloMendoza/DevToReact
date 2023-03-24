@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import logo from '../Assets/Imagenes/logo.png';
 import { useMediaQuery } from 'react-responsive';
+import Footer from '../Footer/Footer';
+
 
 const Navbar = () => {
+    
+        const [ menuOpen, setMenuOpen ] = useState(false)
 
-            
       const isBigScreen = useMediaQuery({ query: '(min-width: 1000px)' })
       const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
+      const openMenu = () => {
+        setMenuOpen(!menuOpen)
+        console.log('Boton clickeado')
+      }
+
+      
     
     return (
             <nav className='navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center align-items-center p-2 w-100'>
@@ -16,10 +25,16 @@ const Navbar = () => {
                     <img className='w-10' src={logo} alt='logo'/>
                     
                     {isTabletOrMobile && 
-                    <button className='navbar-toggler' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className='navbar-toggler' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={openMenu}>
                         <span className='navbar-toggler-icon'></span>
                     </button>
                     }
+                    {menuOpen &&
+                    <div className='navigation' style={{backgroundColor:'blue'}}>
+                        <Footer />
+                    </div>
+                    }
+
                 <div className='container d-flex flex-row justify-content-around collapse navbar-collapse'>
                 {isBigScreen &&
                 <form class="form-inline d-flex">

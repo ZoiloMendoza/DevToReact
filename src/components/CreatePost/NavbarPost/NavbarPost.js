@@ -1,5 +1,6 @@
 import React from "react";
-import logo from "../Assets/Imagenes/logo.png"
+//import logo from "../Assets/Imagenes/logo.png"
+import "./_cardPost.scss"
 
 export const NavbarPost = () =>{
         return (
@@ -9,7 +10,7 @@ export const NavbarPost = () =>{
           <div id="barraSuperior" className="crayons-header__logo d-flex w-100">
               <div className="logoContainer d-flex justify-content-start w-75">
                   <a href="../index.html">
-                      <img id="logo_Dev"  src="../Assets/Imagenes/logo.png" alt="logo" />
+                      <img id="logo_Dev" style={{width:"50px", height:"40px"}}  src="DevToReact/src/components/Assets/Imagenes/logo.png" alt="logo" />
                   </a>
                   <div className="d-flex">
                       <span id="spanDev" className="fw-bolder text-center pt-2 ps-2">Create Post</span>
@@ -22,9 +23,7 @@ export const NavbarPost = () =>{
             <div id="cerrar" className="d-flex justify-content-end">
               <button id="cerrar" className="btn-close fw-bolder" type="submit"></button>
             </div>
-            {/*
-            <button id="cerrar" className="btn fw-bolder" type="submit">X</button>
-        */}
+            
             </div>
       </div>
     </nav>

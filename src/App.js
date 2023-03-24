@@ -9,8 +9,9 @@ function App() {
         
       </header>
       <main>
-        <section>
-        </section>
+        <aside className='page__rightColumn'>
+          <AsideRight/>
+        </aside>
       </main>
       <Footer />
     </div>

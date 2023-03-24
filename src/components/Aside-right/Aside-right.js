@@ -1,8 +1,9 @@
 import React from "react";
+import './_listings.scss';
 
-export const AsideRight = () => {
+const AsideRight = () => {
     return (
-        <section className="page__rightColumn">
+        <aside className="page__rightColumn">
           <article className="mongoHackathon">
             <img src="../Assets/Imagenes/mongoHackathon.webp" alt="mongo hackathon"/>
             <div class="mongoHackathon__body">
@@ -65,6 +66,8 @@ export const AsideRight = () => {
     
               </ul>
               </article>
-        </section>
+        </aside>
     )
 }
+
+export default AsideRight

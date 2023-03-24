@@ -1,7 +1,7 @@
 import React from "react";
 import "./_cardPost.scss"
 
-export const Post = () => {
+const Post = () => {
     return(
         <main className="main__cards mt-0 d-flex w-100 vh-100"> 
         
@@ -65,3 +65,4 @@ export const Post = () => {
     )
 
 }
+export default Post;

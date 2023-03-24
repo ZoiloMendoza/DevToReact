@@ -3,7 +3,7 @@ import './styles.css';
 import logo from '../Assets/Imagenes/logo.png';
 import lupita from '../Assets/iconos/lupita.svg';
 import { useMediaQuery } from 'react-responsive';
-import AsideLeft from '../AsideLeft/AsideLeft';
+import AsideLeftZ from '../AsideLeft/AsideLeftZ';
 //import Desp from './Desp';
 
 
@@ -38,7 +38,7 @@ const Navbar = () => {
                             <span className='navbar-toggler-icon'></span>
                         </button>
                         <div>
-                        <AsideLeft />
+                        <AsideLeftZ />
                         </div>
                     </div>
                     }

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './styles.css';
 import logo from '../Assets/Imagenes/logo.png';
 import { useMediaQuery } from 'react-responsive';
-import Desp from './Desp';
-
+import AsideLeft from '../AsideLeft/AsideLeft';
+//import Desp from './Desp';
 
 
 const Navbar = () => {
@@ -31,12 +31,18 @@ const Navbar = () => {
                     </button>
                     }
                     {menuOpen &&
-                    <div className='navigation' style={{display:'inline', backgroundColor:'white', height:'100vh', width:'50vw', marginTop:'50px', position:'absolute'}}>
-                        <Desp />
+                    <div className='dropdown' style={{display:'flex',  backgroundColor:'white', marginTop:'50px', position: 'absolute'}}>
+                        
+                        <button className='navbar-toggler' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={openMenu}>
+                            <span className='navbar-toggler-icon'></span>
+                        </button>
+                        <div>
+                        <AsideLeft />
+                        </div>
                     </div>
                     }
 
-                <div className='container d-flex flex-row justify-content-around collapse navbar-collapse'>
+                <div className='container d-flex flex-row justify-content-around'>
                 {isBigScreen &&
                 <form class="form-inline d-flex">
                     <input className='form-control mr-sm-2' type="search" placeholder="Search" aria-label="Search" />

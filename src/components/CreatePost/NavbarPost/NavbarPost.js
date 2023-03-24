@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../Assets/Imagenes/logo.png"
+import logo from "../../Assets/Imagenes/logo.png";
 import "./_cardPost.scss";
 
 const NavbarPost = () => {
@@ -32,11 +32,12 @@ const NavbarPost = () => {
               </button>
             </div>
             <div id="cerrar" className="d-flex justify-content-end">
-              <button
+              <a
+                href="/index.html"
                 id="cerrar"
-                className="btn-close fw-bolder"
+                className="cerrar btn-close fw-bolder"
                 type="submit"
-              ></button>
+              ></a>
             </div>
           </div>
         </div>

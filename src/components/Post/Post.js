@@ -3,6 +3,9 @@ import Footer from "../Footer/Footer";
 import corazon from '../Assets/iconos/corazon.svg';
 import globito from '../Assets/iconos/globito.svg';
 import rectangulo from '../Assets/iconos/rectangulo.svg';
+import trash from '../Assets/iconos/trash3.svg';
+import edit from '../Assets/iconos/pencil.svg';
+import { Link } from "react-router-dom";
 
 const Post = () => {
     return (
@@ -11,6 +14,7 @@ const Post = () => {
         
 
         <main className="main__cards">
+            
       
        <div  id="barra" className="container-fluid">
               <ul className="m-0">
@@ -32,6 +36,14 @@ const Post = () => {
               </ul>
        </div>
       <div className="cards__contenido d-flex flex-column">
+      <div className="iconos d-flex p-2 justify-content-end">
+                <Link >
+                <object className="post-icons m-2" data={trash}></object> 
+                </Link>
+                <Link to={'/editPost'}>
+                <object className="post-icons m-2" data={edit}></object> 
+                </Link>
+            </div>
 
       <div className="card container-fluid px-0 ">
         <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qveVZoV6--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/if0w9fs7g4hk8sftjyo9.jpg" className="card-img-top" alt="Cover image for Weekly web development resources #124" />

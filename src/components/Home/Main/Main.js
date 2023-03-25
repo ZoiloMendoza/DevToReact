@@ -1,24 +1,35 @@
 import React, { useState, useEffect } from "react";
-import AsideRight from '../../Aside-right/Aside-right'
-import AsideLeftZ from "../../AsideLeft/AsideLeftZ"
+import AsideRight from '../../Aside-right/Aside-right';
+import AsideLeftZ from "../../AsideLeft/AsideLeftZ";
 //import AsideLeft from "../../AsideLeft/AsideLeft";
-import Card from "../../Card/Card";
-import axios from "axios";
+import axios from 'axios';
+import Card from '../../Card/Card'
 
-const Main = () =>{
+const Main = () => {
 
-    const [ post, setPost ] = useState([])
+    const [ posts, setPosts ] = useState([])
     const [ loading, setLoading ] = useState(true)
+
+    const [users, setUsers] = useState([])
 
     useEffect( () => {
         const fetchedPost = async () => {
             const postResponse = await axios.get('http://localhost:5000/api/v1/posts')
-            setPost(postResponse.data)
+            setPosts(postResponse.data)
             setLoading(false)
         }
         fetchedPost()
 
     }, [])
+
+    useEffect(() => {
+        const fetchedUser = async () => {
+            const userResponse = await axios.get('http://localhost:5000/api/v1/users')
+            setUsers(userResponse);
+        }
+        fetchedUser()
+    }, [])
+    console.log(users)
 
 
     return (
@@ -28,7 +39,7 @@ const Main = () =>{
                     <AsideLeftZ/>
                 </selection>
                 <selection className='page__centerColumn'>{/**Columna 2 */}
-                  {loading ? <span>loading...</span> : post.map((item) => {return <Card props={item}/>})}
+                  {loading ? <span>loading...</span> : posts.map((item) => {return <Card props={item}/>})}
                 </selection>
                 <section className="page__rightColumn">{/**Columna 3 */}
                     <AsideRight/>

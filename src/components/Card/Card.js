@@ -2,7 +2,6 @@ import articleCover from '../Assets/Imagenes/article-cover.webp'
 import vient from '../Assets/Imagenes/vincent.webp'
 import like from '../Assets/iconos/like.svg'
 import save from '../Assets/iconos/save.svg'
-import vient from '../Assets/Imagenes/vincent.webp';
 import comment from '../Assets/iconos/comment.svg';
 import { Link } from 'react-router-dom';
 

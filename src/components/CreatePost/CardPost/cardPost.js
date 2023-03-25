@@ -1,5 +1,6 @@
 import React from "react";
 import be from "../../Assets/iconos/be.svg"
+import icon2 from "../../Assets/iconos/icon2"
 //import "./_cardPost.scss"
 
 const Post = () => {
@@ -33,7 +34,7 @@ const Post = () => {
               <div className="bg-light">
                 <ul className="list-group list-group-horizontal px-3 bg-light py-2">
                   <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data={be}>be</object></li>
-                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon2.svg">icon2</object></li>
+                  <li className="list-group-item border-0 bg-light"><object className="me-2" data={icon2}>icon2</object></li>
                   <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon3.svg">icon3</object></li>
                   <li className="list-group-item border-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon4.svg">icon4</object></li>
                   <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="/src/components/Assets/iconos/icon5.svg">icon5</object></li>

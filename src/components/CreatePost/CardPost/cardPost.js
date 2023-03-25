@@ -1,6 +1,6 @@
 import React from "react";
 import be from "../../Assets/iconos/be.svg"
-import icon2 from "../../Assets/iconos/icon2"
+import icon2 from "../../Assets/iconos/icon2.svg"
 //import "./_cardPost.scss"
 
 const Post = () => {

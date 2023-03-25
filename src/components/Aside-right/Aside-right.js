@@ -1,10 +1,11 @@
 import React from "react";
+import mongo from "../Assets/Imagenes/mongoHackathon.webp";
 
 const AsideRight = () => {
     return (
           <>
           <article className="mongoHackathon">
-            <img src="../Assets/Imagenes/mongoHackathon.webp" alt="mongo hackathon"/>
+            <img src={mongo} alt="mongo hackathon"/>
             <div className="mongoHackathon__body">
               <h3 className="px-3 py-4">MongoDB Atlas Hackathon 2022 (9)</h3>
               <ul className="p-0">

@@ -4,6 +4,7 @@ import logo from '../Assets/Imagenes/logo.png';
 import lupita from '../Assets/iconos/lupita.svg';
 import { useMediaQuery } from 'react-responsive';
 import AsideLeftZ from '../AsideLeft/AsideLeftZ';
+import { Link } from 'react-router-dom';
 //import Desp from './Desp';
 
 
@@ -23,8 +24,9 @@ const Navbar = () => {
     
     return (
             <nav className='navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center align-items-center p-2 w-100'>
-                
+                    <Link to='/'>
                     <img className='w-10' src={logo} alt='logo'/>
+                    </Link>
                     
                     {isTabletOrMobile && 
                     <button className='navbar-toggler' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={openMenu}>
@@ -57,7 +59,9 @@ const Navbar = () => {
                 <button type="button" className='btn btn-light m-3'>Login</button>
                 }
                 {isBigScreen &&
-                <button type="button" className='btn btn-outline-primary m-3'>Create account</button>
+                <Link to={'/crearPost'}>
+                <button type="button" className='btn btn-outline-primary m-3'>Create Post</button>
+                </Link>
                 }
                 </div>
             </nav>

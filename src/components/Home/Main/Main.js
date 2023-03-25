@@ -14,7 +14,7 @@ const Main = () =>{
                     <AsideLeftZ/>
                 </selection>
                 <selection className='page__centerColumn'>{/**Columna 2 */}
-
+                
                 </selection>
                 <section className="page__rightColumn">{/**Columna 3 */}
                     <AsideRight/>

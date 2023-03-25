@@ -5,7 +5,6 @@ import AsideLeftZ from "../../AsideLeft/AsideLeftZ"
 import Card from "../../Card/Card";
 import axios from "axios";
 
-
 const Main = () =>{
 
     const [ post, setPost ] = useState([])

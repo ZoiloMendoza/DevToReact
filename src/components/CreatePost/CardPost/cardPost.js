@@ -1,8 +1,9 @@
 import React from "react";
-import "./_cardPost.scss"
+//import "./_cardPost.scss"
 
 const Post = () => {
     return(
+      <body>
         <main className="main__cards mt-0 d-flex w-100 vh-100"> 
         <form id="formPost" className="formPost container-fluid d-flex justify-content-center mx-0">
           <div className="cardMainPost w-100 py-3">
@@ -60,8 +61,8 @@ const Post = () => {
                 <p id="column-P2" className="lh-sm">Use keywords where appropriate to help ensure people can find your post by search.</p>
         </div>
         
-    </main>
-
+        </main>
+    </body>
     )
 
 }

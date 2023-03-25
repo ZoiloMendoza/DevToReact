@@ -29,7 +29,7 @@ const Main = () => {
         }
         fetchedUser()
     }, [])
-    console.log(users)
+    console.log({users})
 
 
     return (

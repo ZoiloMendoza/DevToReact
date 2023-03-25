@@ -14,7 +14,7 @@ const Main = () => {
 
     useEffect( () => {
         const fetchedPost = async () => {
-            const postResponse = await axios.get('http://localhost:5000/api/v1/posts')
+            const postResponse = await axios.get('http://localhost:4000/api/v1/posts')
             setPosts(postResponse.data)
             setLoading(false)
         }
@@ -24,12 +24,13 @@ const Main = () => {
 
     useEffect(() => {
         const fetchedUser = async () => {
-            const userResponse = await axios.get('http://localhost:5000/api/v1/users')
-            setUsers(userResponse);
+            const userResponse = await axios.get('http://localhost:4000/api/v1/users')
+            setUsers(userResponse.data)
         }
         fetchedUser()
     }, [])
-    console.log(users)
+    //console.log(users)
+
 
 
     return (
@@ -39,7 +40,17 @@ const Main = () => {
                     <AsideLeftZ/>
                 </selection>
                 <selection className='page__centerColumn'>{/**Columna 2 */}
-                  {loading ? <span>loading...</span> : posts.map((item) => {return <Card props={item}/>})}
+                  {loading ? <span>loading...</span> : posts.map((post) => { 
+                     let author = post.author
+                     const postAndUser = users.map((user) => {
+                      if(author === user._id) {
+                        //console.log({...user, ...post})
+                        const ensemble =  {...user, ...post}
+                        return < Card props={ensemble} />
+                      } 
+                    })  
+                    return postAndUser
+                  })}
                 </selection>
                 <section className="page__rightColumn">{/**Columna 3 */}
                     <AsideRight/>

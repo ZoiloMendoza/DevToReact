@@ -6,7 +6,7 @@ import { Link}  from 'react-router-dom'
 import comment from '../Assets/iconos/comment.svg';
 
 const Card = ({props}) => {
-    console.log(props)
+    //console.log(props)
 
     return (
         <>
@@ -14,10 +14,10 @@ const Card = ({props}) => {
             <img src={articleCover} className="card-img-top" alt="image article"/>
             <div className="card-body">
               <div className="card__userDetails d-flex align-items-center mb-2">
-                <img src={vient} alt="profile picture"/>
+                <img src={props.userPhoto} alt="profile picture"/>
                 <div className="d-flex flex-column">
-                  <p className="fw-bold">Vincent Will</p>
-                  <p className="time">Posted on 16 nov</p>
+                  <p className="fw-bold"> {props.name} </p>
+                  <p className="time">{props.createdAt}</p>
                 </div>
               </div>
               <Link to={'/post/1'}>

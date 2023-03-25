@@ -16,7 +16,7 @@ import instagram from '../Assets/iconos/insta.svg';
 import twitch from '../Assets/iconos/twitch.svg';
 import gear from '../Assets/iconos/gear.svg';
 import forem from '../Assets/Imagenes/forem.png';
-import Card from '../Card/Card';
+
 const AsideLeftZ = () => {
     return (
             <>

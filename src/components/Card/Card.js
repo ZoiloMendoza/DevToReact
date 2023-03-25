@@ -2,10 +2,11 @@ import articleCover from '../Assets/Imagenes/article-cover.webp'
 import vient from '../Assets/Imagenes/vincent.webp'
 import like from '../Assets/iconos/like.svg'
 import save from '../Assets/iconos/save.svg'
+import { Link}  from 'react-router-dom'
 import comment from '../Assets/iconos/comment.svg';
-import { Link } from 'react-router-dom';
 
-const Card = () => {
+const Card = ({props}) => {
+    console.log(props)
 
     return (
         <>
@@ -20,7 +21,7 @@ const Card = () => {
                 </div>
               </div>
               <Link to={'/post/1'}>
-                <h3 className="card-title ms-4">Weekly web development resources #124</h3>
+                <h3 className="card-title ms-4">{props.title}</h3>
                 </Link>
               <ul className="d-flex flex-wrap p-0 ms-4">
                 <li>

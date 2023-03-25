@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import AsideRight from '../../Aside-right/Aside-right'
-import AsideLeftZ from "../../AsideLeft/AsideLeftZ"
+import AsideRight from '../../Aside-right/Aside-right';
+import AsideLeftZ from "../../AsideLeft/AsideLeftZ";
 //import AsideLeft from "../../AsideLeft/AsideLeft";
-import Card from "../../Card/Card";
-import axios from "axios";
+import axios from 'axios';
+import Card from '../../Card/Card'
 
-const Main = () =>{
+const Main = () => {
 
     const [ posts, setPosts ] = useState([])
     const [ loading, setLoading ] = useState(true)

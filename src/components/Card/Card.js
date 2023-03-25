@@ -1,6 +1,8 @@
 import articleCover from '../Assets/Imagenes/article-cover.webp'
 import vient from '../Assets/Imagenes/vincent.webp'
-
+import like from '../Assets/iconos/like.svg'
+import commen from '../Assets/iconos/comment.svg'
+import save from '../Assets/iconos/save.svg'
 const Card = () => {
 
     return (
@@ -38,17 +40,17 @@ const Card = () => {
               <div className="card__buttons d-flex ms-4">
                 <div className="interactions d-flex">
                   <div className="reactions d-flex me-4">
-                    <img src="../Assets/iconos/like.svg" alt="like icon"/>
+                    <img src={like} alt="like icon"/>
                     <p>2 reactions</p>
                   </div>
                   <div className="comments d-flex">
-                    <img src="../Assets/iconos/comment.svg" alt="comment icon"/>
+                    <img src={commen} alt="comment icon"/>
                     <p>Add Comment</p>
                   </div>
                 </div>
                 <div className="tools d-flex">
                   <p>2 min read</p>
-                  <img src="../Assets/iconos/save.svg" alt="save icon"/>
+                  <img src={save} alt="save icon"/>
                 </div>
               </div>
             </div>

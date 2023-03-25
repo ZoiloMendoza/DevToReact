@@ -6,7 +6,7 @@ import { Link}  from 'react-router-dom'
 import comment from '../Assets/iconos/comment.svg';
 
 const Card = ({props}) => {
-    console.log(props)
+    //console.log(props)
 
     return (
         <>

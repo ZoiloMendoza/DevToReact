@@ -25,7 +25,7 @@ const Main = () => {
     useEffect(() => {
         const fetchedUser = async () => {
             const userResponse = await axios.get('http://localhost:5000/api/v1/users')
-            setUsers(userResponse);
+            setUsers(userResponse.data)
         }
         fetchedUser()
     }, [])

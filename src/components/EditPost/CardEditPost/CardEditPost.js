@@ -1,3 +1,13 @@
+import React from "react"
+import be from "../../Assets/iconos/be.svg"
+import icon2 from "../../Assets/iconos/icon2.svg"
+import icon3 from "../../Assets/iconos/icon3.svg"
+import icon4 from "../../Assets/iconos/icon4.svg"
+import icon5 from "../../Assets/iconos/icono5.svg"
+import icon6 from "../../Assets/iconos/icon6.svg"
+import icon7 from "../../Assets/iconos/icon7.svg"
+import icon8 from "../../Assets/iconos/icon8.svg"
+
 const Edit = () => {
     return (
         <div>
@@ -28,13 +38,13 @@ const Edit = () => {
 
               <div className="bg-light">
                 <ul className="list-group list-group-horizontal px-3 bg-light py-2">
-                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="../Assets/iconos/be.svg">be</object></li>
-                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="../Assets/iconos/icon2.svg">icon2</object></li>
-                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="../Assets/iconos/icon3.svg">icon3</object></li>
-                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="../Assets/iconos/icon4.svg">icon4</object></li>
-                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data="../Assets/iconos/icon5.svg">icon5</object></li>
-                  <li className="list-group-item border-0 bg-light w-75"><object className="me-2" data="../Assets/iconos/icon6.svg">icon6</object></li>
-                  <li className="list-group-item border-0 bg-light"><object className="me-2" data="../Assets/iconos/icon7.svg">icon7</object></li>
+                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data={be}>be</object></li>
+                  <li className="list-group-item border-0 bg-light"><object className="me-2" data={icon2}>icon2</object></li>
+                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data={icon3}>icon3</object></li>
+                  <li className="list-group-item border-0 bg-light"><object className="me-2" data={icon4}>icon4</object></li>
+                  <li className="list-group-item border-0 px-0 bg-light"><object className="me-2" data={icon5}>icon5</object></li>
+                  <li className="list-group-item border-0 bg-light w-75"><object className="me-2" data={icon6}>icon6</object></li>
+                  <li className="list-group-item border-0 bg-light"><object className="me-2" data={icon7}>icon7</object></li>
                 </ul>
               </div>
               <div className="form-floating w-100 h-100 px-0 mb-3 d-flex flex-column align-content-end">
@@ -43,7 +53,7 @@ const Edit = () => {
                   <ul className="list-group list-group-horizontal px-3 bg-light py-2">
                     <button id="Publish" name="Publish" type="button" className="btn btn-primary fw-bold">Publish</button>
                     <li className="list-group-item border-0 bg-light">Save draft</li>
-                    <li className="list-group-item border-0 px-0 bg-light ps-2"><object className="me-2" data="../Assets/iconos/icon8.svg">icon8</object></li>
+                    <li className="list-group-item border-0 px-0 bg-light ps-2"><object className="me-2" data={icon8}>icon8</object></li>
                     <li className="list-group-item border-0 bg-light">Revert new changes</li>
                   </ul>
                 </div>

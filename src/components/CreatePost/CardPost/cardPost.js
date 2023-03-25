@@ -7,12 +7,14 @@ import icon5 from "../../Assets/iconos/icon5.svg"
 import icon6 from "../../Assets/iconos/icon6.svg"
 import icon7 from "../../Assets/iconos/icon7.svg"
 import icon8 from "../../Assets/iconos/icon8.svg"
+import NavbarPost from "../../CreatePost/NavbarPost/NavbarPost";
 
 //import "./_cardPost.scss"
 
 const Post = () => {
     return(
       <body>
+        < NavbarPost />
         <main className="main__cards mt-0 d-flex w-100 vh-100"> 
         <form id="formPost" className="formPost container-fluid d-flex justify-content-center mx-0">
           <div className="cardMainPost w-100 py-3">

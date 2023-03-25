@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../Assets/Imagenes/logo.png";
-import "./_cardPost.scss";
+//import "./_cardPost.scss";
 
 const NavbarPost = () => {
   return (

@@ -59,7 +59,9 @@ const Navbar = () => {
                 <button type="button" className='btn btn-light m-3'>Login</button>
                 }
                 {isBigScreen &&
-                <button type="button" className='btn btn-outline-primary m-3'>Create account</button>
+                <Link to={'/crearPost'}>
+                <button type="button" className='btn btn-outline-primary m-3'>Create Post</button>
+                </Link>
                 }
                 </div>
             </nav>

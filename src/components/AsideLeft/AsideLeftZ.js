@@ -69,7 +69,7 @@ const AsideLeftZ = () => {
               <img src={contact} alt="software"/>
               <p>Software comparisons</p>
             </li>
-          </ul>
+            </ul>
           <div className="otherCategories">
             <h2>Other</h2>
             <ul>

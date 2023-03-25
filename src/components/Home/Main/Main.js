@@ -2,7 +2,7 @@ import React from "react";
 import AsideRight from '../../Aside-right/Aside-right'
 import AsideLeftZ from "../../AsideLeft/AsideLeftZ"
 //import AsideLeft from "../../AsideLeft/AsideLeft";
-
+import Card from "../../Card/Card";
 
 
 const Main = () =>{
@@ -14,7 +14,7 @@ const Main = () =>{
                     <AsideLeftZ/>
                 </selection>
                 <selection className='page__centerColumn'>{/**Columna 2 */}
-                
+                    <Card/>
                 </selection>
                 <section className="page__rightColumn">{/**Columna 3 */}
                     <AsideRight/>

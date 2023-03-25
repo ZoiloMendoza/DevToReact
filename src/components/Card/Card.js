@@ -1,5 +1,7 @@
 import articleCover from '../Assets/Imagenes/article-cover.webp'
-import vient from '../Assets/Imagenes/vincent.webp'
+import vient from '../Assets/Imagenes/vincent.webp';
+import comment from '../Assets/iconos/comment.svg';
+import { Link } from 'react-router-dom';
 
 const Card = () => {
 
@@ -15,9 +17,9 @@ const Card = () => {
                   <p className="time">Posted on 16 nov</p>
                 </div>
               </div>
-              <a href="./src/article.html">
+              <Link to={'/post/1'}>
                 <h3 className="card-title ms-4">Weekly web development resources #124</h3>
-              </a>
+                </Link>
               <ul className="d-flex flex-wrap p-0 ms-4">
                 <li>
                   <a href="/">
@@ -42,7 +44,7 @@ const Card = () => {
                     <p>2 reactions</p>
                   </div>
                   <div className="comments d-flex">
-                    <img src="../Assets/iconos/comment.svg" alt="comment icon"/>
+                    <img src={comment} alt="comment icon"/>
                     <p>Add Comment</p>
                   </div>
                 </div>

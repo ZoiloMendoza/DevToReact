@@ -1,17 +1,11 @@
 import articleCover from '../Assets/Imagenes/article-cover.webp'
-<<<<<<< HEAD
 import vient from '../Assets/Imagenes/vincent.webp'
 import like from '../Assets/iconos/like.svg'
 import commen from '../Assets/iconos/comment.svg'
 import save from '../Assets/iconos/save.svg'
-=======
-import vient from '../Assets/Imagenes/vincent.webp';
-import comment from '../Assets/iconos/comment.svg';
-import { Link } from 'react-router-dom';
-
->>>>>>> 71d781517a0a919da397b975ae4cf9c6168397a1
-const Card = () => {
-
+import { Link}  from 'react-router-dom'
+const Card = ({props}) => {
+    console.log(props)
     return (
         <>
         <article className="card m-3 " >
@@ -25,7 +19,7 @@ const Card = () => {
                 </div>
               </div>
               <Link to={'/post/1'}>
-                <h3 className="card-title ms-4">Weekly web development resources #124</h3>
+                <h3 className="card-title ms-4">{props.title}</h3>
                 </Link>
               <ul className="d-flex flex-wrap p-0 ms-4">
                 <li>
@@ -51,11 +45,7 @@ const Card = () => {
                     <p>2 reactions</p>
                   </div>
                   <div className="comments d-flex">
-<<<<<<< HEAD
                     <img src={commen} alt="comment icon"/>
-=======
-                    <img src={comment} alt="comment icon"/>
->>>>>>> 71d781517a0a919da397b975ae4cf9c6168397a1
                     <p>Add Comment</p>
                   </div>
                 </div>

@@ -13,7 +13,7 @@ const Main = () =>{
 
     useEffect( () => {
         const fetchedPost = async () => {
-            const postResponse = await axios.get('http://localhost:3000/api/v1/posts')
+            const postResponse = await axios.get('http://localhost:5000/api/v1/posts')
             setPost(postResponse.data)
             setLoading(false)
         }
@@ -29,7 +29,7 @@ const Main = () =>{
                     <AsideLeftZ/>
                 </selection>
                 <selection className='page__centerColumn'>{/**Columna 2 */}
-                  {loading ? <span>loading...</span> : post.map((item) => {return <Card/>})}
+                  {loading ? <span>loading...</span> : post.map((item) => {return <Card props={item}/>})}
                 </selection>
                 <section className="page__rightColumn">{/**Columna 3 */}
                     <AsideRight/>

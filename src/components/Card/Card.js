@@ -46,7 +46,7 @@ const Card = ({props}) => {
               </div>
               <Link to={'/post/1'}>
                 <h3 className="card-title ms-4">{props.title}</h3>
-                </Link>
+              </Link>
               <ul className="d-flex flex-wrap p-0 ms-4">
                 <li>
                   <a href="/">
@@ -81,7 +81,7 @@ const Card = ({props}) => {
                 </div>
               </div>
             </div>
-          </article>
+        </article>
         </>
     )
 }

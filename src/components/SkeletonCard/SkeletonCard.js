@@ -64,7 +64,7 @@ const SkeletonCard = () => {
 
 export const WsSkeleton = ({numberOf}) => {
 	return (
-		<SkeletonTheme baseColor="#626c7f" highlightColor="#535966">
+		<SkeletonTheme baseColor="#c4c9d3" highlightColor="#a8acb8">
 			{[...new Array(numberOf)].map((_, i) => (
 				<SkeletonCard key={i} />
 			))}

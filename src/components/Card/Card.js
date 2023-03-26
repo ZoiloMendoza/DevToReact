@@ -38,9 +38,9 @@ const Card = ({props}) => {
             <img src={articleCover} className="card-img-top" alt="Clover"/>
             <div className="card-body">
               <div className="card__userDetails d-flex align-items-center mb-2">
-                <img src={props.userPhoto} alt="profile"/>
+                <img src={props.author.userPhoto} alt="profile"/>
                 <div className="d-flex flex-column">
-                  <p className="fw-bold"> {props.name} </p>
+                  <p className="fw-bold"> {props.author.name} </p>
                   <p className="time">{`${formatFecha(props.createdAt)} (${tiempoTranscurrido(props.createdAt)})`}</p>
                 </div>
               </div>

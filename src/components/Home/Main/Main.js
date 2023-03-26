@@ -10,8 +10,7 @@ const Main = () => {
 
     const [ posts, setPosts ] = useState([])
     const [ loading, setLoading ] = useState(true)
-    const [users, setUsers] = useState([])
-    const [userMap, setUserMap] = useState({})
+    
 
     //OBTIENE TODOS LOS POST DE LA API(LA API SE CONECTA CON MONGO)
     useEffect( () => { 
@@ -24,25 +23,9 @@ const Main = () => {
         fetchedPost()
 
     }, [])
-    //OBTIENE TODOS LOS USUARIOS DE LA API(LA API SE CONECTA CON MONGO)
-    useEffect(() => {
-        const fetchedUser = async () => {
-            const userResponse = await axios.get('http://localhost:5000/api/v1/users')
-            setUsers(userResponse.data)
-        }
-        fetchedUser()
-    }, [])
 
-    //FORMATEA EL ARREGLO DE OBJETOS DE USUARIOS A: {ID:{CONTENIDO},ID2:{CONTENIDO2}, ...}
-    useEffect(() => {
-       const us = {}
-       users.forEach((user) =>{
-        us[user._id] = user
-       })
-       setUserMap(us)
-    }, [users])
 
-//console.log({userMap})
+console.log({posts})
 
     const numberOf = 5;
 
@@ -54,13 +37,9 @@ const Main = () => {
                 </selection>
                 <selection className='page__centerColumn'>{/**Columna 2 */}
                 {loading ? <WsSkeleton numberOf={numberOf}/> : posts.map((post) => { 
-                     const author = post.author
-                     const user = userMap[author]
-                      if(user) {
-                        const ensemble =  {...user, ...post}
-                        return < Card key={ensemble._id} props={ensemble} />
+                        return < Card key={post._id} props={post} />
                       }
-                  })}
+                  )}
                 </selection>
                 <section className="page__rightColumn">{/**Columna 3 */}
                     <AsideRight/>

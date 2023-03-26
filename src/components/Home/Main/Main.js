@@ -9,10 +9,11 @@ const Main = () => {
 
     const [ posts, setPosts ] = useState([])
     const [ loading, setLoading ] = useState(true)
-
     const [users, setUsers] = useState([])
+    const [userMap, setUserMap] = useState({})
 
-    useEffect( () => {
+    //OBTIENE TODOS LOS POST DE LA API(LA API SE CONECTA CON MONGO)
+    useEffect( () => { 
         const fetchedPost = async () => {
             const postResponse = await axios.get('http://localhost:5000/api/v1/posts')
             setPosts(postResponse.data)
@@ -21,7 +22,7 @@ const Main = () => {
         fetchedPost()
 
     }, [])
-
+    //OBTIENE TODOS LOS USUARIOS DE LA API(LA API SE CONECTA CON MONGO)
     useEffect(() => {
         const fetchedUser = async () => {
             const userResponse = await axios.get('http://localhost:5000/api/v1/users')
@@ -29,7 +30,17 @@ const Main = () => {
         }
         fetchedUser()
     }, [])
-    console.log({users})
+
+    //FORMATEA EL ARREGLO DE OBJETOS DE USUARIOS A: {ID:{CONTENIDO},ID2:{CONTENIDO2}, ...}
+    useEffect(() => {
+       const us = {}
+       users.forEach((user) =>{
+        us[user._id] = user
+       })
+       setUserMap(us)
+    }, [users])
+
+//console.log({userMap})
 
 
     return (
@@ -39,7 +50,14 @@ const Main = () => {
                     <AsideLeftZ/>
                 </selection>
                 <selection className='page__centerColumn'>{/**Columna 2 */}
-                  {loading ? <span>loading...</span> : posts.map((item) => {return <Card props={item}/>})}
+                {loading ? <span>loading...</span> : posts.map((post) => { 
+                     const author = post.author
+                     const user = userMap[author]
+                      if(user) {
+                        const ensemble =  {...user, ...post}
+                        return < Card key={ensemble._id} props={ensemble} />
+                      }
+                  })}
                 </selection>
                 <section className="page__rightColumn">{/**Columna 3 */}
                     <AsideRight/>

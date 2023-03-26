@@ -4,6 +4,7 @@ import AsideLeftZ from "../../AsideLeft/AsideLeftZ";
 //import AsideLeft from "../../AsideLeft/AsideLeft";
 import axios from 'axios';
 import Card from '../../Card/Card'
+import { WsSkeleton } from "../../SkeletonCard/SkeletonCard";
 
 const Main = () => {
 
@@ -14,6 +15,7 @@ const Main = () => {
 
     //OBTIENE TODOS LOS POST DE LA API(LA API SE CONECTA CON MONGO)
     useEffect( () => { 
+        setLoading(true)
         const fetchedPost = async () => {
             const postResponse = await axios.get('http://localhost:5000/api/v1/posts')
             setPosts(postResponse.data)
@@ -42,6 +44,7 @@ const Main = () => {
 
 //console.log({userMap})
 
+    const numberOf = 5;
 
     return (
         <main>
@@ -50,7 +53,7 @@ const Main = () => {
                     <AsideLeftZ/>
                 </selection>
                 <selection className='page__centerColumn'>{/**Columna 2 */}
-                {loading ? <span>loading...</span> : posts.map((post) => { 
+                {loading ? <WsSkeleton numberOf={numberOf}/> : posts.map((post) => { 
                      const author = post.author
                      const user = userMap[author]
                       if(user) {

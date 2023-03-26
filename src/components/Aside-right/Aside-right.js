@@ -25,23 +25,23 @@ const AsideRight = () => {
           <article className="listings">
           <ul className="list-group">
             <li className="list-group-item title d-flex justify-content-between">Listings <a href="/listings">See all </a> </li>            
-            <li className="list-group-item elemento-lista ">🆘 Help Needed for Low-code Project in Node.js <a href="#">    collabs</a></li>
-            <li className="list-group-item elemento-lista"> Cloud App Developers <a href="#"> events</a></li>
-            <li className="list-group-item elemento-lista"> Binance Clone Script <a href="#"> collabs </a></li>
-            <li className="list-group-item elemento-lista"> (Free Credits) Build your next web project with CodeDesign <a href="#"> products</a></li>
-            <li className="list-group-item elemento-lista"> Convert Website To CMS In Great Budget! <a href="#"> collabs </a></li>
-            <li className="list-group-item lista-btn">  <a href="#"> Create a Listing  </a></li>
+            <li className="list-group-item elemento-lista ">🆘 Help Needed for Low-code Project in Node.js <a href="/">    collabs</a></li>
+            <li className="list-group-item elemento-lista"> Cloud App Developers <a href="/"> events</a></li>
+            <li className="list-group-item elemento-lista"> Binance Clone Script <a href="/"> collabs </a></li>
+            <li className="list-group-item elemento-lista"> (Free Credits) Build your next web project with CodeDesign <a href="/"> products</a></li>
+            <li className="list-group-item elemento-lista"> Convert Website To CMS In Great Budget! <a href="/"> collabs </a></li>
+            <li className="list-group-item lista-btn">  <a href="/"> Create a Listing  </a></li>
           </ul>
           </article>
           <article className="listings">
             <ul className="list-group">
               <li className="list-group-item title  d-flex justify-content-between">#discuss </li>
               
-              <li className="list-group-item elemento-lista "> "Who or what are you grateful for in tech?" <a href="#"> 2 comments </a></li>
-              <li className="list-group-item elemento-lista"> "Why creative AI matters more than we think " <a className="New" href="#"> New</a></li>
-              <li className="list-group-item elemento-lista">  "What are your goals for the week of November 21? " <a className="New" href="#"> New  </a></li>
-              <li className="list-group-item elemento-lista"> "Artificial "Intelligence" and Controversial Ideas about Future Technology "<a className="New" href="#"> New </a></li>
-              <li className="list-group-item elemento-lista"> "Hello, World!"" <a className="New" href="#"> New  </a></li>
+              <li className="list-group-item elemento-lista "> "Who or what are you grateful for in tech?" <a href="/"> 2 comments </a></li>
+              <li className="list-group-item elemento-lista"> "Why creative AI matters more than we think " <a className="New" href="/"> New</a></li>
+              <li className="list-group-item elemento-lista">  "What are your goals for the week of November 21? " <a className="New" href="/"> New  </a></li>
+              <li className="list-group-item elemento-lista"> "Artificial "Intelligence" and Controversial Ideas about Future Technology "<a className="New" href="/"> New </a></li>
+              <li className="list-group-item elemento-lista"> "Hello, World!"" <a className="New" href="/"> New  </a></li>
   
             </ul>
             </article>
@@ -49,7 +49,7 @@ const AsideRight = () => {
           <article className="listings">
             <ul className="list-group">
               <li className="list-group-item title  d-flex justify-content-between">#explainlikeimfive  </li>
-              <li className="list-group-item elemento-lista "> Explain picking up a second language Like I'm Five  <a href="#"> 2 comments </a></li>
+              <li className="list-group-item elemento-lista "> Explain picking up a second language Like I'm Five  <a href="/"> 2 comments </a></li>
   
             </ul>
             </article>
@@ -57,12 +57,12 @@ const AsideRight = () => {
               <ul className="list-group">
                 <li className="list-group-item title  d-flex justify-content-between">#challenge  </li>
                 
-                <li className="list-group-item elemento-lista "> "Daily Challenge #32- Hide Phone Numbers" <a href="#"> 23 comments </a></li>
-                <li className="list-group-item elemento-lista"> "Daily Challenge #238 - One is the Loneliest Number  " <a href="#"> 6 comments </a></li>
-                <li className="list-group-item elemento-lista"> "Debugging- you're doing it wrong. 10 techniques to find a bug in your code" <a href="#"> 42 comments </a></li>
-                <li className="list-group-item elemento-lista"> "Daily Challenge #76 - Bingo! (or not...) " <a href="#"> 14 comments </a></li>
+                <li className="list-group-item elemento-lista "> "Daily Challenge #32- Hide Phone Numbers" <a href="/"> 23 comments </a></li>
+                <li className="list-group-item elemento-lista"> "Daily Challenge #238 - One is the Loneliest Number  " <a href="/"> 6 comments </a></li>
+                <li className="list-group-item elemento-lista"> "Debugging- you're doing it wrong. 10 techniques to find a bug in your code" <a href="/"> 42 comments </a></li>
+                <li className="list-group-item elemento-lista"> "Daily Challenge #76 - Bingo! (or not...) " <a href="/"> 14 comments </a></li>
 
-                <li className="list-group-item elemento-lista"> "NgRx Efferct vs Reducer vs Selector" <a className="New" href="#"> New  </a></li>
+                <li className="list-group-item elemento-lista"> "NgRx Efferct vs Reducer vs Selector" <a className="New" href="/"> New  </a></li>
     
               </ul>
               </article>

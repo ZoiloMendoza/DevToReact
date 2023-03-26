@@ -11,9 +11,7 @@ const Post = () => {
     return (
         <>
         <Navbar />
-        
-
-        <main className="main__cards">
+       <main className="main__cards">
             
       
        <div  id="barra" className="container-fluid">
@@ -35,6 +33,7 @@ const Post = () => {
                 </li>
               </ul>
        </div>
+       
       <div className="cards__contenido d-flex flex-column">
       <div className="iconos d-flex p-2 justify-content-end">
                 <Link >
@@ -43,7 +42,7 @@ const Post = () => {
                 <Link to={'/editPost'}>
                 <object className="post-icons m-2" data={edit}></object> 
                 </Link>
-            </div>
+      </div>
 
       <div className="card container-fluid px-0 ">
         <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qveVZoV6--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/if0w9fs7g4hk8sftjyo9.jpg" className="card-img-top" alt="Cover image for Weekly web development resources #124" />
@@ -123,9 +122,8 @@ const Post = () => {
        </article>
       </div>
 
-    </main>
-
-    <Footer />
+       </main>
+       <Footer />
     </>
     )
 }

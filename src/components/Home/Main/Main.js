@@ -41,9 +41,9 @@ console.log({posts})
                       }
                   )}
                 </selection>
-                <section className="page__rightColumn">{/**Columna 3 */}
+                <selection className="page__rightColumn">{/**Columna 3 */}
                     <AsideRight/>
-                </section>
+                </selection>
             </selection>
         </main>
     )

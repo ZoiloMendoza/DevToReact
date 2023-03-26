@@ -24,7 +24,7 @@ const Navbar = () => {
     
     return (
             <nav className='navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center align-items-center p-2 w-100'>
-                    <Link to='/'>
+                    <Link to={'/'}>
                     <img className='w-10' src={logo} alt='logo'/>
                     </Link>
                     
@@ -56,7 +56,9 @@ const Navbar = () => {
                 </div>
                 <div className='container d-flex justify-content-end'>
                 {isBigScreen && 
-                <button type="button" className='btn btn-light m-3'>Login</button>
+                <Link to={'/login'}>
+                    <button type="button" className='btn btn-light m-3'>Login</button>
+                </Link>
                 }
                 {isBigScreen &&
                 <Link to={'/crearPost'}>

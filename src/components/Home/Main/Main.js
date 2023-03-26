@@ -31,20 +31,20 @@ console.log({posts})
 
     return (
         <main>
-            <section className='page-container container-xl d-flex justify-content-between'>
-                <section className='page__leftColumn'>{/**Columna 1 */}
+            <selection className='page-container container-xl d-flex justify-content-between'>
+                <selection className='page__leftColumn'>{/**Columna 1 */}
                     <AsideLeftZ/>
-                </section>
-                <section className='page__centerColumn'>{/**Columna 2 */}
+                </selection>
+                <selection className='page__centerColumn'>{/**Columna 2 */}
                   {loading ? <WsSkeleton numberOf={numberOf} /> : posts.map((post) => { 
                         return < Card key={post._id} props={post} />
                       } 
                     )}
-                </section>
-                <section className="page__rightColumn">{/**Columna 3 */}
+                </selection>
+                <selection className="page__rightColumn">{/**Columna 3 */}
                     <AsideRight/>
-                </section>
-            </section>
+                </selection>
+            </selection>
         </main>
     )
 }

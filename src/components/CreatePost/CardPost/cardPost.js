@@ -12,6 +12,8 @@ import NavbarPost from "../../CreatePost/NavbarPost/NavbarPost";
 //import "./_cardPost.scss"
 
 const Post = () => {
+
+  
     return(
       <body>
         < NavbarPost />

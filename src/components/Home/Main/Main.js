@@ -48,7 +48,7 @@ const Main = () => {
                         const ensemble =  {...user, ...post}
                         return < Card props={ensemble} />
                       } 
-                    })  
+                    })
                     return postAndUser
                   })}
                 </selection>

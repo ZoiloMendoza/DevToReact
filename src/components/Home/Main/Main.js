@@ -16,7 +16,7 @@ const Main = () => {
     useEffect( () => { 
         setLoading(true)
         const fetchedPost = async () => {
-            const postResponse = await axios.get('http://localhost:5000/api/v1/posts')
+            const postResponse = await axios.get('http://localhost:5001/api/v1/posts')
             setPosts(postResponse.data)
             setLoading(false)
         }
@@ -36,14 +36,14 @@ console.log({posts})
                     <AsideLeftZ/>
                 </selection>
                 <selection className='page__centerColumn'>{/**Columna 2 */}
-                {loading ? <WsSkeleton numberOf={numberOf}/> : posts.map((post) => { 
+                  {loading ? <WsSkeleton numberOf={numberOf} /> : posts.map((post) => { 
                         return < Card key={post._id} props={post} />
-                      }
-                  )}
+                      } 
+                    )}
                 </selection>
-                <section className="page__rightColumn">{/**Columna 3 */}
+                <selection className="page__rightColumn">{/**Columna 3 */}
                     <AsideRight/>
-                </section>
+                </selection>
             </selection>
         </main>
     )

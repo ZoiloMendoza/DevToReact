@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "../../Assets/Imagenes/logo.png";
-import "./_cardPost.scss";
+import { Link } from "react-router-dom";
+
+//import "./_cardPost.scss";
 
 const NavbarPost = () => {
   return (
@@ -9,14 +11,14 @@ const NavbarPost = () => {
         <div className="container-xxl crayons-header d-flex w-100 ps-0 pe-0 justify-content-between">
           <div id="barraSuperior" className="crayons-header__logo d-flex w-100">
             <div className="logoContainer d-flex justify-content-start w-75">
-              <a href="../index.html">
+              <Link to={'/'}>
                 <img
                   id="logo_Dev"
                   style={{ width: "50px", height: "40px" }}
                   src={logo}
                   alt="logo"
                 />
-              </a>
+              </Link>
               <div className="d-flex">
                 <span id="spanDev" className="fw-bolder text-center pt-2 ps-2">
                   Create Post
@@ -32,12 +34,9 @@ const NavbarPost = () => {
               </button>
             </div>
             <div id="cerrar" className="d-flex justify-content-end">
-              <a
-                href="/index.html"
-                id="cerrar"
-                className="cerrar btn-close fw-bolder"
-                type="submit"
-              ></a>
+            <Link to={"/"}>
+                <img id="cerrar" className="cerrar btn-close fw-bolder" />
+              </Link>
             </div>
           </div>
         </div>

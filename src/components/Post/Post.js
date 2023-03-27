@@ -6,29 +6,31 @@ import rectangulo from "../Assets/iconos/rectangulo.svg";
 import trash from "../Assets/iconos/trash3.svg";
 import edit from "../Assets/iconos/pencil.svg";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import CardDetails from "./CardDetails/CardDetails";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const pathArray = window.location.pathname.split('/');
-const postId = pathArray[2];
-console.log(postId)
 
 const Post = () => {
-  const [postCard, setPostCard] = useState([]);
+  const params = useParams();
+  const { postid } = params;
+  console.log(postid)
+  const [postCard, setPostCard] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
     const fetchedPost = async () => {
       const postResponse = await axios.get(
-        `http://localhost:5001/api/v1/posts/${postId}`
+        `http://localhost:5000/api/v1/posts/${postid}`
       );
       setPostCard(postResponse.data);
       setLoading(false);
     };
     fetchedPost();
-  }, []);
+  }, [postid]);
+
   return (
     <>
       <Navbar />
@@ -64,12 +66,12 @@ const Post = () => {
           </div>
 
           <div className="card container-fluid px-0 ">
-            {loading ? (
+            {loading ? 
               <span> loading ... </span>
-            ) : (
+             : 
               <CardDetails props={postCard} />
               
-            )}
+            }
           </div>
         </div>
 

@@ -39,20 +39,14 @@ const Login = () => {
     }
     //metodo post
     useEffect(() => {
-        //if(Object.values(contentForm).length <= 3){
-        //    return console.log('objeto vacio')
-        //}
         if(ready){
             const addUser = async () => {
-                const userPost = await axios.post('http://localhost:5001/api/v1/users', contentForm);
+                const userPost = await axios.post('http://localhost:5000/api/v1/users', contentForm);
                console.log('statusCode',userPost.status)
                 if(userPost.status !==201){
                     console.log('error al insertar')
                 }else{
                     console.log(userPost.statusText)
-                    //const newAddUserPost = addUser.data;
-                    //const listaUser = [newAddUserPost, ...userArray]
-                    //setUserArray(listaUser)
                 }
             }
             addUser()

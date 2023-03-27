@@ -50,3 +50,5 @@ const userLogin = () => {
         </body>
     )
 }
+
+export default userLogin;

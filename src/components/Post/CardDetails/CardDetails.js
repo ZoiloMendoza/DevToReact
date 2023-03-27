@@ -1,8 +1,10 @@
 import React from "react"
+import { useState } from "react"
 
 
 const CardDetails = ({props}) => {
-  console.log(props)
+   
+
     return (
         <>
          <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qveVZoV6--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/if0w9fs7g4hk8sftjyo9.jpg" className="card-img-top" alt="Cover image for Weekly web development resources #124" />
@@ -25,7 +27,8 @@ const CardDetails = ({props}) => {
     
           </div>
           <p> {props.content}</p>
-        </div>
+        </div> 
+         
         </>
     )
 }

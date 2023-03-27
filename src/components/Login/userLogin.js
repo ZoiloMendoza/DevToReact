@@ -8,7 +8,7 @@ const UserLogin = () => {
         <body>
             <Navbar />
 
-            <section className="" >
+            <section className="mt-5" >
             <div class="registration_card">
             <div className="container">
                 <p className="registration_description">

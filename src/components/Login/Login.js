@@ -8,14 +8,13 @@ import { useRef } from 'react';
 const Login = () => {
 
     const formularioRef = useRef(null);
-
     const eventoResetFormulario = () => {
         formularioRef.current.reset()
     }
 
     const [contentForm, setcontentForm] = useState({});
     const [ready, setReady] = useState(false);
-    const [userArray, setUserArray] = useState([]);
+    //const [userArray, setUserArray] = useState([]);
     //crea el objeto
     const onFormInputChange=(event)=>{
         event.preventDefault();
@@ -26,12 +25,13 @@ const Login = () => {
           [inputID]:inputValue
         })
       }
+
     //vvalida que este completo
     const newUserSumbit = (event) => {
         setReady(false)
         event.preventDefault();
         setReady(false)
-        if(Object.values(contentForm).length === 3){
+        if(Object.values(contentForm).length !== 4){
             return alert('Completa el formulario')    
         }
         setReady(true)
@@ -39,9 +39,9 @@ const Login = () => {
     }
     //metodo post
     useEffect(() => {
-        if(Object.values(contentForm).length <= 3){
-            return console.log('objeto vacio')
-        }
+        //if(Object.values(contentForm).length <= 3){
+        //    return console.log('objeto vacio')
+        //}
         if(ready){
             const addUser = async () => {
                 const userPost = await axios.post('http://localhost:5001/api/v1/users', contentForm);
@@ -50,9 +50,9 @@ const Login = () => {
                     console.log('error al insertar')
                 }else{
                     console.log(userPost.statusText)
-                    const newAddUserPost = addUser.data;
-                    const listaUser = [newAddUserPost, ...userArray]
-                    setUserArray(listaUser)
+                    //const newAddUserPost = addUser.data;
+                    //const listaUser = [newAddUserPost, ...userArray]
+                    //setUserArray(listaUser)
                 }
             }
             addUser()
@@ -61,7 +61,7 @@ const Login = () => {
     }, [ready])
 
 
-    console.log('userArray',userArray,ready)
+    //console.log('userArray',userArray,ready)
     return (
         <body>
         <Navbar/>    

@@ -36,7 +36,7 @@ const Post = () => {
               </ul>
        </div>
       <div className="cards__contenido d-flex flex-column">
-      <div className="iconos d-flex p-2 justify-content-end">
+      <div className="iconos d-flex p-2 justify-content-end align-items-center">
                 <Link >
                 <object className="post-icons m-2" data={trash}></object> 
                 </Link>

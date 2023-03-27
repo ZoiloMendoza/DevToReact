@@ -3,42 +3,44 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import './login.css';
 
-const userLogin = () => {
+const UserLogin = () => {
     return (
         <body>
             <Navbar />
 
-            <section>
-            <div class="container">
-                <p class="registration_description">
+            <section className="" >
+            <div class="registration_card">
+            <div className="container">
+                <p className="registration_description">
                     User login
                 </p>
             </div>
-            <div class="registration_actions">
+            <div className="registration_actions">
 
-                <div class="registration_actions-email mt-3" id="sign-in-password-form">
+                <div className="registration_actions-email mt-3" id="sign-in-password-form">
 
-                    <form  class="new_user" id="user_login" accept-charset="UTF-8" method="post">
+                    <form  className="new_user" id="user_login" accept-charset="UTF-8" method="post">
    
-                        <div class="login_email mb-3">
+                        <div className="login_email mb-3">
                             <label for="user_email">Email</label>
-                            <input class="form-control" autocomplete="email" type="email" name="email" id="user_email"/>
+                            <input className="form-control" autocomplete="email" type="email" name="email" id="user_email"/>
                         </div>
-                        <div class="login_password mb-3">
+                        <div className="login_password mb-3">
                             <label for="user_password">Password</label>
-                            <input class="form-control" autocomplete="current-password" type="password" name="password" id="user_password"/>
+                            <input className="form-control" autocomplete="current-password" type="password" name="password" id="user_password"/>
                         </div>
                                               
-                        <div class="form_actions mb-3 mt-3">
-                            <button type="submit" name="commit" value="Continue" class="btn btn-primary btn--l w-100" data-disable-with="Continue" id="Continue">Continue</button>
+                        <div className="form_actions mb-3 mt-3">
+                            <button type="submit" name="commit" value="Continue" className="btn btn-primary btn--l w-100" data-disable-with="Continue" id="Continue">Continue</button>
                         </div>
                     </form>
 
-                    <p class="pt-6 fs-s align-center">
+                    <p className="pt-6 fs-s align-center">
                         <p>I forgot my password</p>
                     </p>
 
                 </div>
+            </div>
             </div>
       
             </section>
@@ -48,4 +50,4 @@ const userLogin = () => {
     )
 }
 
-export default userLogin;
+export default UserLogin;

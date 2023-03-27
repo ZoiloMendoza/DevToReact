@@ -5,7 +5,8 @@ import Post from './components/Post/Post';
 import CardPost from './components/CreatePost/CardPost/cardPost';
 import EditPost from './components/EditPost/CardEditPost/CardEditPost';
 import Login from './components/Login/Login';
-import userLogin from './components/Login/userLogin';
+import UserLogin from './components/Login/UserLogin';
+
 //import AsideRight from './components/Aside-right/Aside-right';
 //import Footer from './components/Footer/Footer';
 //import Navbar from './components/Navbar/Navbar';
@@ -18,7 +19,7 @@ function App() {
     <Routes>
       <Route path='/' element={ <Home />} />
       <Route path='/login' element={ <Login />} />
-      <Route path='/userLogin' element={ <userLogin />} />
+      <Route path='/userLogin' element={ <UserLogin />} />
       <Route path='/post/:postid' element={ <Post />} />
       <Route path='/crearPost' element={ <CardPost/>}/>
       <Route path='/editPost' element={ <EditPost/>}/>

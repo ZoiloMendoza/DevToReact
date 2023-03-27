@@ -56,8 +56,13 @@ const Navbar = () => {
                 </div>
                 <div className='container d-flex justify-content-end'>
                 {isBigScreen && 
-                <Link to={'/login'}>
+                <Link to={'/userLogin'}>
                     <button type="button" className='btn btn-light m-3'>Login</button>
+                </Link>
+                }
+                {isBigScreen &&
+                <Link to={'/login'}>
+                <button type="button" className='btn btn-outline-primary m-3'>Create Account</button>
                 </Link>
                 }
                 {isBigScreen &&

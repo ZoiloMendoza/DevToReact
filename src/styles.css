@@ -544,7 +544,7 @@ footer {
   }
   .barraSuperior {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
   .formPost {
     width: 100%;
@@ -568,7 +568,7 @@ footer {
   }
   .barraSuperior {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
   }
   .cerrar {
     width: 30%;

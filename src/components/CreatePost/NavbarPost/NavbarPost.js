@@ -34,12 +34,9 @@ const NavbarPost = () => {
               </button>
             </div>
             <div id="cerrar" className="d-flex justify-content-end">
-              <a
-                href="/index.html"
-                id="cerrar"
-                className="cerrar btn-close fw-bolder"
-                type="submit"
-              ></a>
+            <Link to={"/"}>
+                <img id="cerrar" className="cerrar btn-close fw-bolder" />
+              </Link>
             </div>
           </div>
         </div>

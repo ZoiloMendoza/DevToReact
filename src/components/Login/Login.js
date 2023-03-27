@@ -41,7 +41,7 @@ const Login = () => {
     useEffect(() => {
         if(ready){
             const addUser = async () => {
-                const userPost = await axios.post('http://localhost:5000/api/v1/users', contentForm);
+                const userPost = await axios.post('http://localhost:5001/api/v1/users', contentForm);
                console.log('statusCode',userPost.status)
                 if(userPost.status !==201){
                     console.log('error al insertar')

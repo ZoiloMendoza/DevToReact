@@ -41,7 +41,7 @@ const Card = ({props}) => {
                 <img src={props.author.userPhoto} alt="profile"/>
                 <div className="d-flex flex-column">
                   <p className="fw-bold"> {props.author.name} </p>
-                  <p className="time">{`${formatFecha(props.createdAt)} (${tiempoTranscurrido(props.createdAt)})`}</p>
+                  <p className="time">{`${formatFecha(props.createdAt)}`}</p>
                 </div>
               </div>
               <Link to={`/post/${props._id}`}>

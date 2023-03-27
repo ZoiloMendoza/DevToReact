@@ -5,7 +5,7 @@ import Post from './components/Post/Post';
 import CardPost from './components/CreatePost/CardPost/cardPost';
 import EditPost from './components/EditPost/CardEditPost/CardEditPost';
 import Login from './components/Login/Login';
-import UserLogin from './components/Login/UserLogin';
+import UserLogin from './components/Login/userLogin';
 
 //import AsideRight from './components/Aside-right/Aside-right';
 //import Footer from './components/Footer/Footer';

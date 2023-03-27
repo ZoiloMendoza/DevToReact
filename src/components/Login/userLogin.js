@@ -7,7 +7,6 @@ const UserLogin = () => {
     return (
         <body>
             <Navbar />
-
             <section className="mt-5" >
             <div class="registration_card">
             <div className="container">

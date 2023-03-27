@@ -1,4 +1,5 @@
 import React from "react"
+import { useState } from "react"
 
 
 const CardDetails = ({props}) => {
@@ -27,7 +28,8 @@ const CardDetails = ({props}) => {
     
           </div>
           <p> {props.content}</p>
-        </div>
+        </div> 
+         
         </>
     )
 }

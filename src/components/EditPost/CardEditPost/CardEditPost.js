@@ -8,8 +8,24 @@ import icon6 from "../../Assets/iconos/icon6.svg"
 import icon7 from "../../Assets/iconos/icon7.svg"
 import icon8 from "../../Assets/iconos/icon8.svg"
 import NavbarEdit from "../../EditPost/NavbarEditPost/NavbarEdit"
+import { useState, useEffect } from "react"
+import axios from "axios"
+import { useParams } from "react-router-dom"
 
 const Edit = () => {
+  const params = useParams();
+  const {editId} = params;
+  //console.log(editId)
+  const [editCard, setEditCard] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    const editResponse = await axios.get(
+      `http://localhost:5000/api/v1/posts/${editId}`
+    );
+    setEditCard(editResponse)
+  })
     return (
         <div>
           <NavbarEdit />

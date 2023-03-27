@@ -16,7 +16,7 @@ const Main = () => {
     useEffect( () => { 
         setLoading(true)
         const fetchedPost = async () => {
-            const postResponse = await axios.get('http://localhost:5001/api/v1/posts')
+            const postResponse = await axios.get('http://localhost:5000/api/v1/posts')
             setPosts(postResponse.data)
             setLoading(false)
         }

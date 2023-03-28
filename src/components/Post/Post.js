@@ -15,7 +15,7 @@ import axios from "axios";
 const Post = () => {
   const params = useParams();
   const { postid } = params;
-  console.log(postid)
+  //console.log(postid)
   const [postCard, setPostCard] = useState({});
   const [loading, setLoading] = useState(true);
 

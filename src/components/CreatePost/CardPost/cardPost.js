@@ -18,7 +18,9 @@ const Post = () => {
     comments: [],
     author: "6420cd3ff201bc098bb1f675",
   });
+
   const [ trigger, setTrigger] = useState(false)
+
   const onFormInputChange = (event) => {
     event.preventDefault();
     const inputID = event.target.name;
@@ -35,7 +37,7 @@ const Post = () => {
 
   useEffect(() => {
     if (trigger) {
-      console.log("Use Effect")
+      console.log("Use Effect Post")
       const addPosts = async () => {
         const Post = await axios.post(
           "http://localhost:5001/api/v1/posts",

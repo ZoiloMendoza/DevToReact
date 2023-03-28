@@ -13,7 +13,8 @@ const Login = () => {
     }
 
     const [contentForm, setcontentForm] = useState({});
-    const [ready, setReady] = useState(false);
+    const [ trigger, setTrigger] = useState(false);
+    //const [ready, setReady] = useState(false);
     //const [userArray, setUserArray] = useState([]);
     //crea el objeto
     const onFormInputChange=(event)=>{
@@ -26,20 +27,26 @@ const Login = () => {
         })
       }
 
-    //vvalida que este completo
     const newUserSumbit = (event) => {
-        setReady(false)
         event.preventDefault();
-        setReady(false)
-        if(Object.values(contentForm).length !== 4){
-            return alert('Completa el formulario')    
-        }
-        setReady(true)
+        setTrigger(true)
+    };
+    //vvalida que este completo
+    
+    //const newUserSumbit = (event) => {
+    //    setReady(false)
+    //    event.preventDefault();
+    //    setReady(false)
+    //    if(Object.values(contentForm).length !== 4){
+    //        return alert('Completa el formulario')    
+    //    }
+    //    setReady(true)
         //console.log(Object.values(contentForm).length)
-    }
+    //}
     //metodo post
     useEffect(() => {
-        if(ready){
+        if(trigger){
+            console.log("Use Effect User")
             const addUser = async () => {
                 const userPost = await axios.post('http://localhost:5000/api/v1/users', contentForm);
                console.log('statusCode',userPost.status)
@@ -49,10 +56,11 @@ const Login = () => {
                     console.log(userPost.statusText)
                 }
             }
-            addUser()
+            addUser();
+            setTrigger(false);
             eventoResetFormulario();
         }
-    }, [ready])
+    }, [trigger])
 
 
     //console.log('userArray',userArray,ready)
@@ -107,7 +115,7 @@ const Login = () => {
                         </p>
                     </div>
 
-                    <form onChange={onFormInputChange} onSubmit={newUserSumbit} ref={formularioRef} class="new_user" id="new_user" accept-charset="UTF-8" method="post">
+                    <form onChange={onFormInputChange} ref={formularioRef} class="new_user" id="new_user" accept-charset="UTF-8" method="post">
    
                         <div class="login_name">
                           <label for="user_name">Name</label>
@@ -128,7 +136,7 @@ const Login = () => {
                         </div>
                         
                         <div class="form_actions mb-3 mt-3">
-                            <button type="submit" name="commit" value="Continue" class="btn btn-primary btn--l w-100" data-disable-with="Continue" id="Continue">Continue</button>
+                            <button onChange={newUserSumbit} type="submit" name="commit" value="Continue" class="btn btn-primary btn--l w-100" data-disable-with="Continue" id="Continue">Continue</button>
                         </div>
                     </form>
 

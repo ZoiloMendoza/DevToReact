@@ -15,9 +15,8 @@ import { useParams } from "react-router-dom";
 const Edit = () => {
   const params = useParams();
   const { postid } = params;
+
   const [contentForm, setContentForm] = useState({});
-  //console.log(editId)
-  const [editCard, setEditCard] = useState({});
   const [trigger, setTrigger] = useState(false);
   
 
@@ -26,15 +25,16 @@ const Edit = () => {
       const editResponse = await axios.get(
         `http://localhost:5001/api/v1/posts/${postid}`
       );
-      setEditCard(editResponse.data);
+      setContentForm(editResponse.data);
     };
     fetchedEdit();
   }, [postid]);
-  console.log(editCard);
-  const [title, setTitle] = useState(editCard.title);
-  const [content, setContent] = useState(editCard.content);
+  //console.log(editCard);
+  //const [title, setTitle] = useState(editCard.title);
+  //const [content, setContent] = useState(editCard.content);
 
   const onFormInputChange = (event) => {
+    console.log('event',event)
     event.preventDefault();
     const inputID = event.target.name;
     const inputValue = event.target.value;
@@ -42,8 +42,6 @@ const Edit = () => {
       ...contentForm,
       [inputID]: inputValue,
     });
-    setTitle(contentForm.title);
-  setContent(contentForm.content);
   };
   const editPostPublish = (event) => {
     event.preventDefault();
@@ -109,11 +107,10 @@ const Edit = () => {
 
               <div className="form-floating w-100 px-0 mb-3">
                 <textarea
-                  readOnly={true}
                   id="floatingTextarea"
-                  value={editCard.title}
+                  value={contentForm.title}
                   name="title"
-                  className="form-control border-0 fs-3 fw-bold pt-5"
+                  className="form-control border-0 fs-3 fw-bold pt-1"
                   style={{ height: "200px;" }}
                   placeholder=""
                 >
@@ -163,7 +160,7 @@ const Edit = () => {
               <div className="form-floating w-100 h-100 px-0 mb-3 d-flex flex-column align-content-end">
                 <textarea
                   id="floatingTextarea2"
-                  value={content}
+                  value={contentForm.content}
                   name="content"
                   className="form-control border-0 fs-4 pt-5"
                   style={{ height: "45vh" }}

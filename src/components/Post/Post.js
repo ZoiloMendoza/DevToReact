@@ -58,10 +58,10 @@ const Post = () => {
         <div className="cards__contenido d-flex flex-column">
           <div className="iconos d-flex p-2 justify-content-end">
             <Link>
-              <object className="post-icons m-2" data={trash}></object>
+            <button className="btn btn-light px-1 py-1 fw-bold" type="button"><object className="post-icons m-2" data={trash}></object></button>
             </Link>
             <Link to={`/editPost/${postid}`}>
-              <object className="post-icons m-2" data={edit}></object>
+              <button className="btn btn-light px-1 py-1 fw-bold" type="button"><object className="post-icons m-2" data={edit}></object></button>
             </Link>
           </div>
 

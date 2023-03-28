@@ -10,7 +10,7 @@ import icon8 from "../../Assets/iconos/icon8.svg";
 import NavbarEdit from "../../EditPost/NavbarEditPost/NavbarEdit";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Edit = () => {
   const params = useParams();
@@ -46,6 +46,7 @@ const Edit = () => {
   const editPostPublish = (event) => {
     event.preventDefault();
     setTrigger(true);
+    window.location.href = 'http://localhost:3000/'
   };
 
   useEffect(() => {
@@ -168,6 +169,7 @@ const Edit = () => {
                 ></textarea>
                 <div className="bg-light mt-2">
                   <ul className="list-group list-group-horizontal px-3 bg-light py-2">
+                    <Link to={'/'}>
                     <button
                       id="Publish"
                       onClick={editPostPublish}
@@ -177,6 +179,7 @@ const Edit = () => {
                     >
                       Publish
                     </button>
+                    </Link>
                     <li className="list-group-item border-0 bg-light">
                       Save draft
                     </li>

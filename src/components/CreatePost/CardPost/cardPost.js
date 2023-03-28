@@ -33,6 +33,7 @@ const Post = () => {
   const newPostSubmit = (event) => {
     event.preventDefault();
     setTrigger(true)
+    window.location.href = 'http://localhost:3000/'
   };
 
   useEffect(() => {

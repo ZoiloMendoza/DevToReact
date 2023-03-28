@@ -3,8 +3,8 @@ import Footer from "../Footer/Footer";
 import corazon from "../Assets/iconos/corazon.svg";
 import globito from "../Assets/iconos/globito.svg";
 import rectangulo from "../Assets/iconos/rectangulo.svg";
-import trash from "../Assets/iconos/trash3.svg";
-import edit from "../Assets/iconos/pencil.svg";
+import {ReactComponent as Trash} from "../Assets/iconos/trash3.svg";
+import {ReactComponent as Edit}  from "../Assets/iconos/pencil.svg";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import CardDetails from "./CardDetails/CardDetails";
@@ -13,26 +13,45 @@ import axios from "axios";
 
 
 const Post = () => {
+
   const params = useParams();
   const { postid } = params;
   //console.log(postid)
   const [postCard, setPostCard] = useState({});
   const [loading, setLoading] = useState(true);
+  const [trigger, setTrigger] = useState(false)
 
+  useEffect(() => {
+    if(trigger){
+      console.log('eliminado')
+      const elim = async () => {
+      await axios.delete(`http://localhost:5001/api/v1/posts/${postid}`);
+      }
+      elim()
+      setTrigger(false)
+    }
+  }, [trigger, postid])
+  
   useEffect(() => {
     setLoading(true);
     const fetchedPost = async () => {
       const postResponse = await axios.get(
         `http://localhost:5001/api/v1/posts/${postid}`
-      );
-      setPostCard(postResponse.data);
-      setLoading(false);
-    };
-    fetchedPost();
-  }, [postid]);
-
-  return (
-    <>
+        );
+        setPostCard(postResponse.data);
+        setLoading(false);
+      };
+      fetchedPost();
+    }, [postid]);
+    
+    const eliminar = (event) => {
+      event.preventDefault();
+      setTrigger(true) 
+      window.location.href = 'http://localhost:3000/'
+    }
+    
+    return (
+      <>
       <Navbar />
       <main className="main__cards">
         <div id="barra" className="container-fluid">
@@ -57,11 +76,11 @@ const Post = () => {
 
         <div className="cards__contenido d-flex flex-column">
           <div className="iconos d-flex p-2 justify-content-end">
-            <Link>
-            <button className="btn btn-light px-1 py-1 fw-bold" type="button"><object className="post-icons m-2" data={trash}></object></button>
-            </Link>
+            
+            <button onClick={eliminar} className="btn btn-light px-1 py-1 fw-bold" type="button"><Trash/></button>
+            
             <Link to={`/editPost/${postid}`}>
-              <button className="btn btn-light px-1 py-1 fw-bold" type="button"><object className="post-icons m-2" data={edit}></object></button>
+              <button className="btn btn-light px-1 py-1 fw-bold" type="button"><Edit/></button>
             </Link>
           </div>
 

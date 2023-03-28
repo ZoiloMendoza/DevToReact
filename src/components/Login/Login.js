@@ -11,12 +11,13 @@ const Login = () => {
     const eventoResetFormulario = () => {
         formularioRef.current.reset()
     }
-
-    const [contentForm, setcontentForm] = useState({});
+    
     const [ trigger, setTrigger] = useState(false);
-    //const [ready, setReady] = useState(false);
-    //const [userArray, setUserArray] = useState([]);
-    //crea el objeto
+    const [contentForm, setcontentForm] = useState({
+        posts: [],
+        comments: []
+    });
+    
     const onFormInputChange=(event)=>{
         event.preventDefault();
         const inputID= event.target.name
@@ -30,25 +31,15 @@ const Login = () => {
     const newUserSumbit = (event) => {
         event.preventDefault();
         setTrigger(true)
+        alert('Usuario creado')
+        window.location.href = `http://localhost:3000/`
     };
-    //vvalida que este completo
     
-    //const newUserSumbit = (event) => {
-    //    setReady(false)
-    //    event.preventDefault();
-    //    setReady(false)
-    //    if(Object.values(contentForm).length !== 4){
-    //        return alert('Completa el formulario')    
-    //    }
-    //    setReady(true)
-        //console.log(Object.values(contentForm).length)
-    //}
-    //metodo post
     useEffect(() => {
         if(trigger){
             console.log("Use Effect User")
             const addUser = async () => {
-                const userPost = await axios.post('http://localhost:5000/api/v1/users', contentForm);
+                const userPost = await axios.post('http://localhost:5001/api/v1/users',contentForm);
                console.log('statusCode',userPost.status)
                 if(userPost.status !==201){
                     console.log('error al insertar')
@@ -67,7 +58,6 @@ const Login = () => {
     return (
         <body>
         <Navbar/>    
-
         <section>
         <div class="registration_card">
             <div class="container">
@@ -136,7 +126,7 @@ const Login = () => {
                         </div>
                         
                         <div class="form_actions mb-3 mt-3">
-                            <button onChange={newUserSumbit} type="submit" name="commit" value="Continue" class="btn btn-primary btn--l w-100" data-disable-with="Continue" id="Continue">Continue</button>
+                            <button onClick={newUserSumbit} type="submit" name="commit" value="Continue" class="btn btn-primary btn--l w-100" data-disable-with="Continue" id="Continue">Continue</button>
                         </div>
                     </form>
 

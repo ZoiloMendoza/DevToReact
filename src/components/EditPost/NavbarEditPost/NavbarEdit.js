@@ -20,7 +20,7 @@ const NavbarPost = () => {
               </Link>
               <div className="d-flex">
                 <span id="spanDev" className="fw-bolder text-center pt-2 ps-2">
-                  Create Post
+                  Edit Post
                 </span>
               </div>
             </div>

@@ -23,7 +23,7 @@ const Post = () => {
     setLoading(true);
     const fetchedPost = async () => {
       const postResponse = await axios.get(
-        `http://localhost:5000/api/v1/posts/${postid}`
+        `http://localhost:5001/api/v1/posts/${postid}`
       );
       setPostCard(postResponse.data);
       setLoading(false);
@@ -60,7 +60,7 @@ const Post = () => {
             <Link>
               <object className="post-icons m-2" data={trash}></object>
             </Link>
-            <Link to={"/editPost"}>
+            <Link to={`/editPost/${postid}`}>
               <object className="post-icons m-2" data={edit}></object>
             </Link>
           </div>

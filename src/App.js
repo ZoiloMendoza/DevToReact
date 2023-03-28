@@ -22,7 +22,7 @@ function App() {
       <Route path='/userLogin' element={ <UserLogin />} />
       <Route path='/post/:postid' element={ <Post />} />
       <Route path='/crearPost' element={ <CardPost/>}/>
-      <Route path='/editPost' element={ <EditPost/>}/>
+      <Route path='/editPost/:postid' element={ <EditPost/>}/>
     </Routes>
     
     </>

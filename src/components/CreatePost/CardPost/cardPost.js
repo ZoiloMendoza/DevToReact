@@ -9,18 +9,23 @@ import icon7 from "../../Assets/iconos/icon7.svg";
 import icon8 from "../../Assets/iconos/icon8.svg";
 import NavbarPost from "../../CreatePost/NavbarPost/NavbarPost";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 //import "./_cardPost.scss"
 
 const Post = () => {
+  const navigate = useNavigate();
+  const params = useParams();
+  const { userid } = params;
   const [contentForm, setContentForm] = useState({
     likes: 0,
     comments: [],
-    author: "6420cd3ff201bc098bb1f675",
+    author: userid,
   });
 
   const [ trigger, setTrigger] = useState(false)
-
+  const [idPostNew,setIdPostNew] = useState('')
   const onFormInputChange = (event) => {
     event.preventDefault();
     const inputID = event.target.name;
@@ -32,13 +37,15 @@ const Post = () => {
   };
   const newPostSubmit = (event) => {
     event.preventDefault();
-    setTrigger(true)
-    window.location.href = 'http://localhost:3000/'
+    setTrigger(true);
+    if(idPostNew){
+      alert('Post creado');
+      navigate(`/${userid}`);
+  }
   };
 
   useEffect(() => {
     if (trigger) {
-      console.log("Use Effect Post")
       const addPosts = async () => {
         const Post = await axios.post(
           "http://localhost:5001/api/v1/posts",
@@ -48,16 +55,14 @@ const Post = () => {
         if (Post.status !== 201) {
           console.log("error al insertar");
         } else {
-          console.log(Post.statusText);
+          setIdPostNew(Post.data._id);
         }
       };
       addPosts();
       setTrigger(false)
     }
   }, [trigger]);
-  console.log(trigger)
-
-  console.log(contentForm);
+  
   return (
     <body>
       <NavbarPost />

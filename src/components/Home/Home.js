@@ -3,7 +3,7 @@ import Header from "./Header/Header";
 import Footer from '../Footer/Footer';
 
 const Home = () =>{
-
+    
     return (
         <body>
             <Header/>
@@ -11,6 +11,7 @@ const Home = () =>{
             <Footer/>
         </body>
     )
+    
 }
 
 export default Home;

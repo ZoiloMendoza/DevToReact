@@ -4,11 +4,12 @@ import like from '../Assets/iconos/like.svg'
 import save from '../Assets/iconos/save.svg'
 import comment from  '../Assets/iconos/comment.svg';
 
-const SkeletonCard = () => {
+const SkeletonCard = ({customkey}) => {
 
     return (
-        <article className="card m-3">
-          <Skeleton height={250} />
+        <article className="card m-3" style={{padding: '0px'}}>
+          {customkey === 0 ? <Skeleton height={240} style={{ fontSize: '20px' }}/> : '' }
+          
       <div className="card-body">
         <div className="card__userDetails d-flex align-items-center mb-2">
         <Skeleton circle={true} height={30} width={30} />
@@ -62,11 +63,11 @@ const SkeletonCard = () => {
       )
 }
 
-export const WsSkeleton = ({numberOf}) => {
+export const WsSkeleton = ({numPostsToLoad}) => {
 	return (
 		<SkeletonTheme baseColor="#c4c9d3" highlightColor="#a8acb8">
-			{[...new Array(numberOf)].map((_, i) => (
-				<SkeletonCard key={i} />
+			{[...new Array(numPostsToLoad)].map((_, i) => (
+				<SkeletonCard key={i} customkey={i} />
 			))}
 		</SkeletonTheme>
 	);

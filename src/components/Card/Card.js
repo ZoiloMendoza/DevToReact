@@ -4,9 +4,18 @@ import like from '../Assets/iconos/like.svg'
 import save from '../Assets/iconos/save.svg'
 import { Link}  from 'react-router-dom'
 import comment from '../Assets/iconos/comment.svg';
+import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
 
-const Card = ({props}) => {
-    //console.log(props)
+const Card = ({props, index}) => {
+    
+    const [ userIdValidado, setUserIdValidado] = useState(undefined)
+    const params = useParams();
+    const { userid } = params;
+    
+    useEffect(() => {
+      setUserIdValidado(userid === "undefined" ? undefined : userid);
+  }, [userid]);
 
     const formatFecha = (fecha) =>{
       const fechaForm = new Date(fecha);
@@ -35,16 +44,17 @@ const Card = ({props}) => {
     return (
         <>
         <article className="card m-3 " >
-            <img src={articleCover} className="card-img-top" alt="Clover"/>
+        {index === 0 ? <img src={articleCover} className="card-img-top" alt="Clover"/>: ''}
+            
             <div className="card-body">
               <div className="card__userDetails d-flex align-items-center mb-2">
-                <img src={props.author.userPhoto} alt="profile"/>
+                <img src={props.author.userPhoto ? props.author.userPhoto : 'foto'} alt="profile"/>
                 <div className="d-flex flex-column">
-                  <p className="fw-bold"> {props.author.name} </p>
+                  <p className="fw-bold">{props.author.name === undefined ? 'hola': props.author.name}</p>
                   <p className="time">{`${formatFecha(props.createdAt)}`}</p>
                 </div>
               </div>
-              <Link to={`/post/${props._id}`}>
+              <Link to={userIdValidado ? `/${userIdValidado}/post/${props._id}` :`/post/${props._id}`}>
                 <h3 className="card-title ms-4">{props.title}</h3>
               </Link>
               <ul className="d-flex flex-wrap p-0 ms-4">

@@ -10,13 +10,13 @@ import { useParams } from "react-router-dom";
 import CardDetails from "./CardDetails/CardDetails";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 
 const Post = () => {
-
+  const navigate = useNavigate();
   const params = useParams();
-  const { postid } = params;
-  //console.log(postid)
+  const { postid, userid  } = params;
   const [postCard, setPostCard] = useState({});
   const [loading, setLoading] = useState(true);
   const [trigger, setTrigger] = useState(false)
@@ -30,6 +30,7 @@ const Post = () => {
       elim()
       setTrigger(false)
     }
+    
   }, [trigger, postid])
   
   useEffect(() => {
@@ -38,7 +39,7 @@ const Post = () => {
       const postResponse = await axios.get(
         `http://localhost:5001/api/v1/posts/${postid}`
         );
-        setPostCard(postResponse.data);
+        setPostCard(...postResponse.data);
         setLoading(false);
       };
       fetchedPost();
@@ -46,8 +47,10 @@ const Post = () => {
     
     const eliminar = (event) => {
       event.preventDefault();
-      setTrigger(true) 
-      window.location.href = 'http://localhost:3000/'
+      setTrigger(true)
+      alert('se borro el post')
+      //navigate(`/${userid}`)
+      //window.location.href = 'http://localhost:3000/'
     }
     
     return (
@@ -84,9 +87,9 @@ const Post = () => {
             </Link>
           </div>
 
-          <div className="card container-fluid px-0 ">
+          <div className="card container-fluid px-0">
             {loading ? 
-              <span> loading ... </span>
+              <span style={{padding: '0px'}}> loading ... </span>
              : 
               <CardDetails props={postCard} />
               

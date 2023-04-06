@@ -1,23 +1,39 @@
-import { useState, useEffect } from 'react';
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
-import axios from 'axios';
 import './login.css';
 import { useRef } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 const Login = () => {
 
-    const formularioRef = useRef(null);
-    const eventoResetFormulario = () => {
-        formularioRef.current.reset()
-    }
-    
+    const referenciaFormulario = useRef(null);
+    const navigate = useNavigate();
+    const [userid, setUserid] = useState('');
     const [ trigger, setTrigger] = useState(false);
     const [contentForm, setcontentForm] = useState({
+        name: '',
+        email: '',
+        userPhoto: '',
+        password: '',
         posts: [],
         comments: []
     });
     
+    const validacionObjeto = (objeroAValidar) => {
+        const {name, email, password, userPhoto} = objeroAValidar
+        if(name !== '' && email !== '' && password !== '' && userPhoto !== ''){
+              return true;
+        }else{
+          return false;
+        }
+    };
+
+    const eventoResetFormulario = () => {
+        referenciaFormulario.current.reset()
+    };
+
     const onFormInputChange=(event)=>{
         event.preventDefault();
         const inputID= event.target.name
@@ -26,25 +42,33 @@ const Login = () => {
           ...contentForm,
           [inputID]:inputValue
         })
-      }
+    };
+
 
     const newUserSumbit = (event) => {
         event.preventDefault();
-        setTrigger(true)
-        alert('Usuario creado')
-        window.location.href = `http://localhost:3000/`
+        if(validacionObjeto(contentForm)){
+            setTrigger(true);
+            //console.log('validando id', userid)
+            if(userid){
+                alert('Usuario creado');
+                navigate(`/${userid}`);
+            }
+        }else{
+            return alert('Completa el formulario');
+        }
     };
     
     useEffect(() => {
         if(trigger){
-            console.log("Use Effect User")
             const addUser = async () => {
                 const userPost = await axios.post('http://localhost:5001/api/v1/users',contentForm);
                console.log('statusCode',userPost.status)
                 if(userPost.status !==201){
                     console.log('error al insertar')
                 }else{
-                    console.log(userPost.statusText)
+                    
+                    setUserid(userPost.data._id)
                 }
             }
             addUser();
@@ -53,8 +77,6 @@ const Login = () => {
         }
     }, [trigger])
 
-
-    //console.log('userArray',userArray,ready)
     return (
         <body>
         <Navbar/>    
@@ -105,7 +127,7 @@ const Login = () => {
                         </p>
                     </div>
 
-                    <form onChange={onFormInputChange} ref={formularioRef} class="new_user" id="new_user" accept-charset="UTF-8" method="post">
+                    <form onChange={onFormInputChange} ref={referenciaFormulario} class="new_user" id="new_user" accept-charset="UTF-8" method="post">
    
                         <div class="login_name">
                           <label for="user_name">Name</label>

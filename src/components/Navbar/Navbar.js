@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles.css';
 import logo from '../Assets/Imagenes/logo.png';
 import lupita from '../Assets/iconos/lupita.svg';
@@ -6,25 +6,30 @@ import { useMediaQuery } from 'react-responsive';
 import AsideLeftZ from '../AsideLeft/AsideLeftZ';
 import { Link } from 'react-router-dom';
 //import Desp from './Desp';
-
+import { useParams } from "react-router-dom";
 
 const Navbar = () => {
     
-      const [ menuOpen, setMenuOpen ] = useState(false)
+    const [ menuOpen, setMenuOpen ] = useState(false)
+    const isBigScreen = useMediaQuery({ query: '(min-width: 1000px)' })
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 780px)' })
+    
+    const [ userIdValidado, setUserIdValidado] = useState(undefined)
+    const params = useParams();
+    const { userid } = params;
 
-      const isBigScreen = useMediaQuery({ query: '(min-width: 1000px)' })
-      const isTabletOrMobile = useMediaQuery({ query: '(max-width: 780px)' })
+    useEffect(() => {
+        setUserIdValidado(userid === "undefined" ? undefined : userid);
+    }, [userid]);
 
-      const openMenu = () => {
+    const openMenu = () => {
         setMenuOpen(!menuOpen)
         console.log('Boton clickeado')
-      }
-
-      
+    }
     
     return (
             <nav className='navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center align-items-center p-2 w-100'>
-                    <Link to={'/'}>
+                    <Link to={userIdValidado ? `/${userIdValidado}` : '/'}>
                     <img className='w-10' src={logo} alt='logo'/>
                     </Link>
                     
@@ -56,18 +61,20 @@ const Navbar = () => {
                 </div>
                 <div className='container d-flex justify-content-end'>
                 {isBigScreen && 
-                <Link to={'/userLogin'}>
-                    <button type="button" className='btn btn-light m-3'>Login</button>
+                <Link to={userIdValidado ? '/' : '/userLogin'}>
+                    <button type="button" className='btn btn-light m-3'>
+                        {userIdValidado ? 'Log Out': 'Login'}
+                    </button>
                 </Link>
                 }
                 {isBigScreen &&
                 <Link to={'/login'}>
-                <button type="button" className='btn btn-outline-primary m-3'>Create Account</button>
+                {userIdValidado ? '' : <button type="button" className='btn btn-outline-primary m-3'>Create Account</button>}
                 </Link>
                 }
                 {isBigScreen &&
-                <Link to={'/crearPost'}>
-                <button type="button" className='btn btn-outline-primary m-3'>Create Post</button>
+                <Link to={`/${userIdValidado}/crearPost`}>
+                {userIdValidado ? <button type="button" className='btn btn-outline-primary m-3'>Create Post</button> : '' }
                 </Link>
                 }
                 </div>

@@ -17,12 +17,11 @@ const Main = () => {
         const fetchedPost = async () => {
             try {
                 const postResponse = await axios.get('http://localhost:5001/api/v1/posts')
-                setPosts(postResponse.data)
+                setPosts(postResponse.data.reverse())
                 setLoading(false)
                 
             } catch (error) {
                 console.log(error);
-                //setLoading(false);
             }
         }
         fetchedPost()
